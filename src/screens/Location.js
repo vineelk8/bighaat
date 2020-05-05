@@ -8,31 +8,23 @@ import {
   Image,
 } from "react-native";
 import { Input, Button, Linking } from "@ui-kitten/components";
+import { ceil, greaterThan } from "react-native-reanimated";
 
 export default function Location(props) {
   return (
     <View>
-      <View>
+      <View style={styles.topContainer}>
         <Text style={styles.Loc}>Location</Text>
         <Text style={styles.txt}>
-          To provide you with localized content,Company name needs access to
+          To provide you with localized content, Company name needs access to
           your device's location.
         </Text>
       </View>
-      <View>
+      <View style={styles.bottomContainer}>
         <Image
-          style={{ width: "80%", height: "65%", paddingVertical: 50 }}
-          source={require("../../assets/images/location.jpg")}
+          style={styles.locationImage}
+          source={require("../../assets/images/location.png")}
         />
-        <Text style={styles.skipText}>
-          <Text
-            onPress={() => {
-              Linking.openURL("http://www.google.com/");
-            }}
-          >
-            Skip
-          </Text>
-        </Text>
         <Button
           style={styles.button}
           onPress={() => {
@@ -43,6 +35,15 @@ export default function Location(props) {
         >
           Give Access
         </Button>
+        <Text style={styles.skipText}>
+          <Text
+            onPress={() => {
+              Linking.openURL("http://www.google.com/");
+            }}
+          >
+            Skip
+          </Text>
+        </Text>
       </View>
     </View>
   );
@@ -50,23 +51,47 @@ export default function Location(props) {
 
 const styles = StyleSheet.create({
   Loc: {
-    fontWeight: "bold",
-    fontSize: 30,
-    paddingVertical: 50,
-    paddingBottom: 20,
-    paddingLeft: 30,
+    fontWeight: "700",
+    fontSize: 24,
+    marginBottom: 20,
+    //paddingVertical: 50,
+    // paddingBottom: 20,
+    // paddingLeft: 30,
   },
   txt: {
-    fontSize: 18,
-    paddingLeft: 30,
-    paddingBottom: 10,
+    fontSize: 16,
+    lineHeight: 24,
+    color: "#6a7373",
   },
   skipText: {
-    justifyContent: "center",
-    paddingRight: 55,
+    color: "#6a7373",
+    textAlign: "center",
   },
   button: {
-    marginHorizontal: 30,
-    marginVertical: 10,
+    // marginHorizontal: 30,
+    // marginVertical: 10,
+    width: '100%',
+    marginBottom: 20,
+    backgroundColor: "#297463",
+    borderWidth: 0,
+  },
+  topContainer: {
+    paddingTop: 40,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  bottomContainer: {
+    paddingTop: 40,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+    // backgroundColor: 'green',
+  },
+  locationImage: {
+    width: '100%',
+    height: '64%',
+    marginBottom: 30,
+    textAlign: "center",
   },
 });

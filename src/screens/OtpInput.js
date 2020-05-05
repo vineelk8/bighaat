@@ -39,7 +39,7 @@ export default function OtpInput(props) {
             <View style={styles.imageContainer}>
               <Image
                 style={styles.image}
-                source={require("../../assets/images/wheat.jpg")}
+                source={require("../../assets/images/loginWheatImage.jpg")}
                 resizeMode="cover"
               />
             </View>
@@ -47,7 +47,7 @@ export default function OtpInput(props) {
               <Text style={styles.loginText}>Login</Text>
               <Text style={styles.loginOTP}>Please Enter Your OTP</Text>
               <Text style={styles.mobileText}>
-                <FontAwesome name="phone" size={20} /> Mobile Number
+                <FontAwesome name="phone" size={18} /> Mobile Number
               </Text>
               <Input
                 style={styles.inputText}
@@ -94,30 +94,47 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   loginContainer: {
-    marginLeft: 30,
+    margin: 0,
+    padding: 20,
+    //backgroundColor: "blue",
+    display: 'flex',
   },
   loginText: {
-    fontWeight: "bold",
-    fontSize: 20,
+    fontWeight: "700",
+    fontSize: 24,
+    marginBottom: 10,
   },
-  loginOTP: { marginTop: 10, fontSize: 18 },
+  loginOTP: {
+    fontSize: 16,
+    color: "#6a7373",
+    marginBottom: 20,
+  },
   mobileText: {
-    color: "green",
-    fontWeight: "bold",
-    fontSize: 18,
-    marginTop: 10,
+    color: "#87bc62",
+    fontWeight: "500",
+    fontSize: 16,
+    marginBottom: 10,
+    lineHeight: 30,
+    alignItems: 'center',
   },
   inputText: {
-    width: "90%",
-    marginTop: 10,
+    width: "100%",
+    marginBottom: 20,
+    borderRadius: 6,
+    borderColor: "#d6e3e3",
   },
   otpContainer: {
+    width: "100%",
+    marginBottom: 20,
     flexDirection: "row",
-    marginTop: 10,
+    justifyContent: "space-between",
   },
-  otpInput: { paddingRight: 35 },
+  otpInput: {
+    //paddingRight: 35
+  },
   button: {
-    marginTop: 10,
-    width: "90%",
+    width: "100%",
+    backgroundColor: "#c9d3d3",
+    borderWidth: 0,
   },
 });
