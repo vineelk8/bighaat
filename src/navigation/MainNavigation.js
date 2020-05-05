@@ -4,6 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../screens/Login";
 import OtpInput from "../screens/OtpInput";
 import Location from "../screens/Location";
+import FarmerType from "../screens/FarmerType";
+import SelectCrop from "../screens/SelectCrop";
 
 const BigHaatStackNavigator = createStackNavigator();
 
@@ -13,6 +15,8 @@ const BigHaatNavigator = () => {
       <BigHaatStackNavigator.Screen name="Login" component={Login} />
       <BigHaatStackNavigator.Screen name="OtpInput" component={OtpInput} />
       <BigHaatStackNavigator.Screen name="Location" component={Location} />
+      <BigHaatStackNavigator.Screen name="FarmerType" component={FarmerType} />
+      <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
     </BigHaatStackNavigator.Navigator>
   );
 };

@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  Image,
-} from "react-native";
-import { Input, Button, Linking } from "@ui-kitten/components";
+import { StyleSheet, View, Text, Image } from "react-native";
+import { Button, Linking } from "@ui-kitten/components";
 
 export default function Location(props) {
   return (
@@ -36,9 +29,7 @@ export default function Location(props) {
         <Button
           style={styles.button}
           onPress={() => {
-            props.navigation.navigate({
-              routeName: "GridScreen1",
-            });
+            props.navigation.navigate("FarmerType");
           }}
         >
           Give Access

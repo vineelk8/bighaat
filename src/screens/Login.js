@@ -15,7 +15,7 @@ import { FontAwesome } from "@expo/vector-icons";
 
 export default function Login(props) {
   const [mobileNo, setMobileNo] = useState();
-  const [buttonState, setButtonState] = useState(true);
+  const [buttonState, setButtonState] = useState(false);
 
   const mobileNumberChangeHandler = (value) => {
     setMobileNo(value);
