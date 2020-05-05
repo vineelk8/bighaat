@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   button: {
     // marginHorizontal: 30,
     // marginVertical: 10,
-    width: '100%',
+    width: "100%",
     marginBottom: 20,
     backgroundColor: "#297463",
     borderWidth: 0,
@@ -79,9 +79,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green',
   },
   locationImage: {
-    width: '100%',
-    height: '64%',
+    width: "100%",
+    height: "64%",
     marginBottom: 30,
-    textAlign: "center",
   },
 });

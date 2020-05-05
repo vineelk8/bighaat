@@ -8,7 +8,6 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   Keyboard,
-  Alert,
   ScrollView,
 } from "react-native";
 import { Input, Button } from "@ui-kitten/components";
@@ -63,7 +62,6 @@ export default function OtpInput(props) {
               </View>
               <Button
                 style={styles.button}
-                color="orange"
                 disabled={buttonState}
                 onPress={() => {
                   props.navigation.navigate("Location");
@@ -96,8 +94,7 @@ const styles = StyleSheet.create({
   loginContainer: {
     margin: 0,
     padding: 20,
-    //backgroundColor: "blue",
-    display: 'flex',
+    display: "flex",
   },
   loginText: {
     fontWeight: "700",
@@ -115,7 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
     lineHeight: 30,
-    alignItems: 'center',
+    alignItems: "center",
   },
   inputText: {
     width: "100%",
@@ -129,12 +126,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  otpInput: {
-    //paddingRight: 35
-  },
+  otpInput: {},
   button: {
     width: "100%",
-    backgroundColor: "#c9d3d3",
+    backgroundColor: "orange",
     borderWidth: 0,
   },
 });

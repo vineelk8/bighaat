@@ -54,7 +54,6 @@ export default function Login(props) {
             />
             <Button
               style={styles.button}
-              color="orange"
               disabled={buttonState}
               onPress={() => {
                 props.navigation.navigate("OtpInput");
@@ -86,8 +85,7 @@ const styles = StyleSheet.create({
   loginContainer: {
     margin: 0,
     padding: 20,
-    //backgroundColor: "blue",
-    display: 'flex',
+    display: "flex",
   },
   loginText: {
     fontWeight: "700",
@@ -100,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
     lineHeight: 30,
-    alignItems: 'center',
+    alignItems: "center",
   },
   inputText: {
     width: "100%",
@@ -110,7 +108,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: "100%",
-    backgroundColor: "#c9d3d3",
+    backgroundColor: "orange",
     borderWidth: 0,
   },
 });
