@@ -44,9 +44,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 24,
     marginBottom: 20,
-    //paddingVertical: 50,
-    // paddingBottom: 20,
-    // paddingLeft: 30,
   },
   txt: {
     fontSize: 16,
@@ -58,8 +55,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    // marginHorizontal: 30,
-    // marginVertical: 10,
     width: "100%",
     marginBottom: 20,
     backgroundColor: "#297463",
@@ -76,7 +71,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingLeft: 20,
     paddingRight: 20,
-    // backgroundColor: 'green',
   },
   locationImage: {
     width: "100%",

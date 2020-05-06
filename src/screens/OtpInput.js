@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   otpInput: {},
   button: {
     width: "100%",
-    backgroundColor: "orange",
+    backgroundColor: "#297463",
     borderWidth: 0,
   },
 });

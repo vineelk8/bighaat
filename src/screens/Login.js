@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: "100%",
-    backgroundColor: "orange",
+    backgroundColor: "#297463",
     borderWidth: 0,
   },
 });
