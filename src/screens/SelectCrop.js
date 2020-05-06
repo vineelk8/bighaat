@@ -30,16 +30,20 @@ const SelectCrop = (props) => {
           0/8 <Text style={{ paddingLeft: 200 }}>Don't have Crops</Text>
         </Text>
       </View>
-      <FlatList
-        style={styles.cropsList}
-        keyExtractor={(item) => item.name}
-        data={crops}
-        renderItem={renderGridItem}
-        numColumns={2}
-      />
-      <Button style={styles.button} onPress={() => { }}>
-        Next
+      <View>
+        <FlatList
+          style={styles.cropsList}
+          keyExtractor={(item) => item.name}
+          data={crops}
+          renderItem={renderGridItem}
+          numColumns={3}
+        />
+      </View>
+      <View style={styles.bottomSection}>
+        <Button style={styles.button} onPress={() => { }}>
+          Next
       </Button>
+      </View>
     </View>
   );
 };
@@ -72,9 +76,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#297463",
     borderWidth: 0,
   },
-  cropsList: {
-    //flex: 1,
-    //justifyContent: "center",
+  renderGridItem: {
+    flex: 1,
+    justifyContent: "center",
     borderRadius: 6,
     backgroundColor: "#dbe3e3",
     marginBottom: 20,
@@ -82,6 +86,9 @@ const styles = StyleSheet.create({
     paddingBottom: 35,
     paddingLeft: 20,
     paddingRight: 20,
+  },
+  bottomSection: {
+    padding: 20,
   },
 });
 export default SelectCrop;
