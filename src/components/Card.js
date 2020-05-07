@@ -1,28 +1,21 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Platform,
-  TouchableNativeFeedback,
-} from "react-native";
+import { View, StyleSheet, ImageBackground, Text } from "react-native";
 
 export default function CategoryGridTile(props) {
-  let ToucableCmp = TouchableOpacity;
-
-  if (Platform.OS === "android" && Platform.Version >= 21) {
-    ToucableCmp = TouchableNativeFeedback;
-  }
   return (
     <View style={styles.gridItem}>
-      <ToucableCmp style={{ flex: 1 }}>
-        <View style={styles.container}>
-          <Text style={styles.title} numberOfLines={2}>
-            {props.title}
-          </Text>
-        </View>
-      </ToucableCmp>
+      <View style={styles.container}>
+        <ImageBackground
+          source={require("../../assets/images/tomatoImg.png")}
+          style={styles.image}
+        >
+          <View style={styles.titleContainer}>
+            <Text style={styles.title} numberOfLines={1}>
+              {props.title}
+            </Text>
+          </View>
+        </ImageBackground>
+      </View>
     </View>
   );
 }
@@ -33,25 +26,25 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
     borderRadius: 10,
-    overflow:
-      Platform.OS === "android" && Platform.Version >= 21
-        ? "hidden"
-        : "visible",
-    elevation: 3,
+    overflow: "hidden",
+    elevation: 2,
   },
   container: {
     flex: 1,
-    borderRadius: 10,
-    shadowColor: "black",
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 10,
-    padding: 15,
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
+    flexDirection: "column",
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
   },
   title: {
     fontSize: 20,
+    color: "white",
     textAlign: "center",
+  },
+  titleContainer: {
+    paddingVertical: 5,
+    paddingHorizontal: 12,
   },
 });

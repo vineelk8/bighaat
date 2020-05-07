@@ -20,7 +20,7 @@ export default function Location(props) {
         <Button
           style={styles.button}
           onPress={() => {
-            props.navigation.navigate("FarmerType");
+            props.navigation.navigate("SelectCrop");
           }}
         >
           Give Access

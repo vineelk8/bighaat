@@ -6,9 +6,18 @@ import BigHaatNavigator from "./src/navigation/MainNavigation";
 import { StyleSheet, View, Text, Image } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { AntDesign, Feather } from "@expo/vector-icons";
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    Roboto_medium: require("./node_modules/native-base/Fonts/Roboto_medium.ttf"),
+  });
+};
 
 const App = () => {
   const [showRealApp, setShowRealApp] = useState(false);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   const onDone = () => {
     setShowRealApp(true);
@@ -67,29 +76,39 @@ const App = () => {
     );
   };
 
-  let content;
-
-  if (showRealApp) {
-    content = <BigHaatNavigator />;
-  } else {
-    content = (
-      <AppIntroSlider
-        data={slides}
-        renderItem={renderItem}
-        onDone={onDone}
-        showSkipButton={true}
-        onSkip={onSkip}
-        renderDoneButton={renderDoneButton}
-        renderNextButton={renderNextButton}
-        renderSkipButton={renderSkipButton}
+  if (!dataLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setDataLoaded(true)}
+        onError={(err) => console.log(err)}
       />
     );
+  } else {
+    let content;
+
+    if (showRealApp) {
+      content = <BigHaatNavigator />;
+    } else {
+      content = (
+        <AppIntroSlider
+          data={slides}
+          renderItem={renderItem}
+          onDone={onDone}
+          showSkipButton={true}
+          onSkip={onSkip}
+          renderDoneButton={renderDoneButton}
+          renderNextButton={renderNextButton}
+          renderSkipButton={renderSkipButton}
+        />
+      );
+    }
+    return (
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <NavigationContainer>{content}</NavigationContainer>
+      </ApplicationProvider>
+    );
   }
-  return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <NavigationContainer>{content}</NavigationContainer>
-    </ApplicationProvider>
-  );
 };
 
 const styles = StyleSheet.create({
@@ -124,61 +143,29 @@ const slides = [
     key: "s1",
     text: "Best Recharge offers",
     title: "Mobile Recharge",
-    image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_mobile_recharge.png",
-    },
+    image: require("./assets/images/beetrootImg.png"),
     backgroundColor: "#20d2bb",
   },
   {
     key: "s2",
     title: "Flight Booking",
     text: "Upto 25% off on Domestic Flights",
-    image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_flight_ticket_booking.png",
-    },
+    image: require("./assets/images/beetrootImg.png"),
     backgroundColor: "#febe29",
   },
   {
     key: "s3",
     title: "Great Offers",
     text: "Enjoy Great offers on our all services",
-    image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_discount.png",
-    },
+    image: require("./assets/images/beetrootImg.png"),
     backgroundColor: "#22bcb5",
   },
   {
     key: "s4",
     title: "Best Deals",
     text: " Best Deals on all our services",
-    image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_best_deals.png",
-    },
+    image: require("./assets/images/beetrootImg.png"),
     backgroundColor: "#3395ff",
-  },
-  {
-    key: "s5",
-    title: "Bus Booking",
-    text: "Enjoy Travelling on Bus with flat 100% off",
-    image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_bus_ticket_booking.png",
-    },
-    backgroundColor: "#f6437b",
-  },
-  {
-    key: "s6",
-    title: "Train Booking",
-    text: " 10% off on first Train booking",
-    image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_train_ticket_booking.png",
-    },
-    backgroundColor: "#febe29",
   },
 ];
 
