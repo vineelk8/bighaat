@@ -58,6 +58,8 @@ const App = () => {
           alignItems: "center",
           justifyContent: "space-around",
           paddingBottom: 100,
+          paddingLeft: 20,
+          paddingRight: 20,
         }}
       >
         <Text style={styles.title}>{item.title}</Text>
@@ -122,11 +124,10 @@ const styles = StyleSheet.create({
 const slides = [
   {
     key: "s1",
-    text: "Best Recharge offers",
-    title: "Mobile Recharge",
+    text: "Receive farming advice about how to improve your yield",
+    title: "Crop Advisory",
     image: {
-      uri:
-        "https://raw.githubusercontent.com/AboutReact/sampleresource/master/intro_mobile_recharge.png",
+      uri: "./assets/images/cropAdvisorImg.png",
     },
     backgroundColor: "#20d2bb",
   },

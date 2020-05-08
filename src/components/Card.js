@@ -15,10 +15,10 @@ export default function CategoryGridTile(props) {
     ToucableCmp = TouchableNativeFeedback;
   }
   return (
-    <View style={styles.gridItem}>
+    <View style={styles.container}>
       <ToucableCmp style={{ flex: 1 }}>
-        <View style={styles.container}>
-          <Text style={styles.title} numberOfLines={2}>
+        <View style={styles.gridItem}>
+          <Text style={styles.title} numberOfLines={3}>
             {props.title}
           </Text>
         </View>
@@ -29,29 +29,27 @@ export default function CategoryGridTile(props) {
 
 const styles = StyleSheet.create({
   gridItem: {
-    flex: 1,
-    margin: 15,
-    height: 150,
-    borderRadius: 10,
     overflow:
       Platform.OS === "android" && Platform.Version >= 21
         ? "hidden"
         : "visible",
-    elevation: 3,
+    //elevation: 3,
+    justifyContent: "center",
+    borderRadius: 6,
+    backgroundColor: "#dbe3e3",
+    margin: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    height: 100,
   },
   container: {
+    display: "flex",
+    margin: 0,
     flex: 1,
-    borderRadius: 10,
-    shadowColor: "black",
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 10,
-    padding: 15,
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: "center",
+    fontWeight: "700",
   },
 });
