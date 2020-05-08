@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Button, TouchableOpacity } from "react-native";
-import { greaterThan } from "react-native-reanimated";
 
 const FarmerType = (props) => {
   const [farmerTypes, setfarmerTypes] = useState([]);
@@ -23,7 +22,6 @@ const FarmerType = (props) => {
           Who are you ?
         </Text>
         <Text style={styles.headText}>Choose What Describes you the best</Text>
-
       </View>
       <View>
         <TouchableOpacity style={styles.gridItem}>
@@ -32,7 +30,9 @@ const FarmerType = (props) => {
               farmerType !== null && (
                 <View key={farmerType.name} style={styles.container}>
                   <Text style={styles.farmerTypeName}>{farmerType.name}</Text>
-                  <Text style={styles.farmerTypeDesc}>{farmerType.description}</Text>
+                  <Text style={styles.farmerTypeDesc}>
+                    {farmerType.description}
+                  </Text>
                 </View>
               )
           )}
@@ -41,12 +41,13 @@ const FarmerType = (props) => {
       <View style={styles.bottomSection}>
         <Button
           style={styles.button}
-          onPress={() => props.navigation.navigate("SelectCrop")}
+          onPress={() => {
+            props.navigation.navigate("HomeScreen");
+          }}
           title="Next"
         >
           Next
         </Button>
-
 
         <Text style={styles.skipText}>Skip</Text>
       </View>
@@ -74,23 +75,12 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   gridItem: {
-    //flex: 1,
-    //margin: 15,
-    //height: 80,
     padding: 20,
   },
   container: {
     flex: 1,
     borderRadius: 6,
-    //shadowColor: "black",
-    //shadowOpacity: 0.26,
-    //shadowOffset: { width: 0, height: 2 },
-    //shadowRadius: 15,
-    //elevation: 3,
-    //padding: 20,
     justifyContent: "center",
-    //alignItems: "center",
-    //paddingVertical: 50,
     backgroundColor: "#dbe3e3",
     marginBottom: 20,
     paddingTop: 35,
@@ -99,10 +89,6 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   button: {
-    // marginHorizontal: 30,
-    // marginVertical: 10,
-    // padding: 20,
-    // paddingVertical: 300,
     width: "100%",
     marginBottom: 20,
     backgroundColor: "#297463",
@@ -128,5 +114,3 @@ const styles = StyleSheet.create({
   },
 });
 export default FarmerType;
-
-

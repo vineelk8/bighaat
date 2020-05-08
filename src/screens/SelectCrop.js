@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, FlatList, ScrollView } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { Button } from "@ui-kitten/components";
 
 import Card from "../components/Card";
@@ -19,7 +19,10 @@ const SelectCrop = (props) => {
   }, []);
 
   const renderGridItem = (itemData) => {
-    return <Card title={itemData.item.name} />;
+    console.log(itemData.item);
+    return (
+      <Card title={itemData.item.name} imagePath={itemData.item.imagePath} />
+    );
   };
   return (
     <View>
@@ -30,19 +33,13 @@ const SelectCrop = (props) => {
           0/8
         </Text>
       </View>
-      <View style={styles.cropsListContainer}>
-        <FlatList
-          keyExtractor={(item) => item.name}
-          data={crops}
-          renderItem={renderGridItem}
-          numColumns={3}
-        />
-      </View>
       <View style={styles.bottomSection}>
-        <Button style={styles.button} onPress={() => { }}>
+        <Button
+          style={styles.button}
+          onPress={() => props.navigation.navigate("FarmerType")}
+        >
           Next
-      </Button>
-        <Text style={styles.skipText}>Don't have Crops</Text>
+        </Button>
       </View>
     </View>
   );

@@ -1,55 +1,53 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Platform,
-  TouchableNativeFeedback,
-} from "react-native";
+import { View, StyleSheet, ImageBackground, Text } from "react-native";
 
 export default function CategoryGridTile(props) {
-  let ToucableCmp = TouchableOpacity;
-
-  if (Platform.OS === "android" && Platform.Version >= 21) {
-    ToucableCmp = TouchableNativeFeedback;
-  }
   return (
-    <View style={styles.container}>
-      <ToucableCmp style={{ flex: 1 }}>
-        <View style={styles.gridItem}>
-          <Text style={styles.title} numberOfLines={3}>
-            {props.title}
-          </Text>
-        </View>
-      </ToucableCmp>
+    <View style={styles.gridItem}>
+      <View style={styles.container}>
+        <ImageBackground
+          source={require("../../assets/images/tomatoImg.png")}
+          style={styles.image}
+        >
+          <View style={styles.titleContainer}>
+            <Text style={styles.title} numberOfLines={1}>
+              {props.title}
+            </Text>
+          </View>
+        </ImageBackground>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   gridItem: {
-    overflow:
-      Platform.OS === "android" && Platform.Version >= 21
-        ? "hidden"
-        : "visible",
-    //elevation: 3,
-    justifyContent: "center",
-    borderRadius: 6,
-    backgroundColor: "#dbe3e3",
-    margin: 10,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    height: 100,
+    flex: 1,
+    margin: 15,
+    height: 150,
+    borderRadius: 10,
+    overflow: "hidden",
+    elevation: 2,
   },
   container: {
     display: "flex",
     margin: 0,
     flex: 1,
+    flexDirection: "column",
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
   },
   title: {
-    fontSize: 16,
+    fontSize: 20,
+    color: "white",
     textAlign: "center",
     fontWeight: "700",
+  },
+  titleContainer: {
+    paddingVertical: 5,
+    paddingHorizontal: 12,
   },
 });
