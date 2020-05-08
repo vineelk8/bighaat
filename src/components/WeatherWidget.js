@@ -27,14 +27,11 @@ export default function WeatherWidget() {
   }, []);
 
   const fetchWeather = (lat, lon) => {
-    console.log(lat, lon);
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}&units=metric`
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-
         setTemperature(data.main.temp);
         setWeatherCondition(data.weather[0].main);
         setIsLoading(false);

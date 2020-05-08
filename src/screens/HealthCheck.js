@@ -4,13 +4,16 @@ import WeatherWidget from "../components/WeatherWidget";
 import { Button } from "@ui-kitten/components";
 
 import { copilot, walkthroughable, CopilotStep } from "react-native-copilot";
+import Slider from "../components/Slider";
 
 const WalkthroughableView = walkthroughable(View);
 
 const HealthCheck = (props) => {
   return (
     <View>
-      <View style={styles.headContainer}></View>
+      <View style={styles.headContainer}>
+        <Slider />
+      </View>
       <View style={styles.gridItem}>
         <CopilotStep
           text="Click to know more about Pest & Diseases!"
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#49a38f",
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
-    paddingVertical: 160,
+    paddingVertical: 50,
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 50,
