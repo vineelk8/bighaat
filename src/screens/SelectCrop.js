@@ -27,10 +27,10 @@ const SelectCrop = (props) => {
   return (
     <View>
       <View style={styles.mainContainer}>
-        <Text style={styles.screen}>Select Crop</Text>
-        <Text style={styles.mainText}>Select Upto 8 Crop of Your intrest</Text>
-        <Text style={styles.selectedCrops}>
-          0/8 <Text style={{ paddingLeft: 200 }}>Don't have Crops</Text>
+        <Text style={styles.selectCropHeading}>Select Crop</Text>
+        <Text style={styles.selectCropText}>Select Upto 8 Crop of Your intrest</Text>
+        <Text style={styles.selectedCropsCountTxt}>
+          0/8
         </Text>
       </View>
       <View style={styles.bottomSection}>
@@ -52,19 +52,19 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 50,
+    paddingBottom: 20,
   },
-  screen: {
+  selectCropHeading: {
     fontWeight: "700",
     fontSize: 24,
     color: "#fff",
     marginBottom: 20,
   },
-  mainText: {
+  selectCropText: {
     color: "#fff",
-    marginBottom: 20,
+    marginBottom: 10,
   },
-  selectedCrops: {
+  selectedCropsCountTxt: {
     color: "#fff",
   },
   button: {
@@ -73,16 +73,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#297463",
     borderWidth: 0,
   },
-  renderGridItem: {
-    flex: 1,
-    justifyContent: "center",
-    borderRadius: 6,
-    backgroundColor: "#dbe3e3",
-    marginBottom: 20,
-    paddingTop: 35,
-    paddingBottom: 35,
-    paddingLeft: 20,
-    paddingRight: 20,
+  cropsListContainer: {
+    padding: 10,
+  },
+  skipText: {
+    color: "#6a7373",
+    textAlign: "center",
   },
   bottomSection: {
     padding: 20,

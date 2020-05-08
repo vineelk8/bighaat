@@ -67,6 +67,8 @@ const App = () => {
           alignItems: "center",
           justifyContent: "space-around",
           paddingBottom: 100,
+          paddingLeft: 20,
+          paddingRight: 20,
         }}
       >
         <Text style={styles.title}>{item.title}</Text>

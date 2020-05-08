@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   container: {
+    display: "flex",
+    margin: 0,
     flex: 1,
     flexDirection: "column",
   },
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "white",
     textAlign: "center",
+    fontWeight: "700",
   },
   titleContainer: {
     paddingVertical: 5,
