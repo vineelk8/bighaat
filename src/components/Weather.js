@@ -11,22 +11,22 @@ export default function Weather(props) {
     <View
       style={[
         styles.weatherContainer,
-        { backgroundColor: weatherConditions[weather].color },
       ]}
     >
-      <View style={styles.headerContainer}>
-        <MaterialCommunityIcons
-          size={72}
-          name={weatherConditions[weather].icon}
-          color={"#fff"}
-        />
+
+      <View style={styles.weatherDegreeContainer}>
         <Text style={styles.tempText}>{temperature}˚</Text>
-      </View>
-      <View style={styles.bodyContainer}>
         <Text style={styles.title}>{weatherConditions[weather].title}</Text>
         <Text style={styles.subtitle}>
           {weatherConditions[weather].subtitle}
         </Text>
+      </View>
+      <View style={styles.weatherSymbolContainer}>
+        <MaterialCommunityIcons
+          size={100}
+          name={weatherConditions[weather].icon}
+          color={"#fff"}
+        />
       </View>
     </View>
   );
@@ -39,31 +39,37 @@ Weather.propTypes = {
 
 const styles = StyleSheet.create({
   weatherContainer: {
-    flex: 1,
-  },
-  headerContainer: {
-    flex: 1,
+    display: "flex",
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
+    flexWrap: "wrap",
+    backgroundColor: "#abc4a4",
+  },
+  weatherDegreeContainer: {
+    flex: 2,
+  },
+  weatherSymbolContainer: {
+    flex: 1,
   },
   tempText: {
-    fontSize: 72,
-    color: "#fff",
+    fontSize: 54,
+    fontWeight: "700",
+    color: "#215273",
+    padding: 0,
+    margin: 0,
   },
-  bodyContainer: {
-    flex: 2,
-    alignItems: "flex-start",
-    justifyContent: "flex-end",
-    paddingLeft: 25,
-    marginBottom: 40,
-  },
+
   title: {
-    fontSize: 60,
+    fontSize: 20,
+    fontWeight: "700",
     color: "#fff",
+    padding: 0,
+    margin: 0,
   },
   subtitle: {
-    fontSize: 24,
+    fontSize: 14,
+    fontWeight: "400",
     color: "#fff",
+    padding: 0,
+    margin: 0,
   },
 });

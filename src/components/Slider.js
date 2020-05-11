@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, Text } from "react-native";
 
 import Carousel from "react-native-snap-carousel";
 
@@ -9,7 +9,13 @@ export default function Slider() {
   const renderItem = ({ item, index }) => {
     return (
       <View style={styles.cardContainer}>
-        <Image style={styles.imageSection} source={item.image} />
+        <View style={styles.sliderImgContainer}>
+          <Image style={styles.imageSection} source={item.image} />
+        </View>
+        <View style={styles.sliderTxtContainer}>
+          <Text style={styles.sliderTxtHeader}>{item.title}</Text>
+          <Text style={styles.sliderTxtCntnt}>{item.text}</Text>
+        </View>
       </View>
     );
   };
@@ -18,7 +24,7 @@ export default function Slider() {
     <Carousel
       layout={"default"}
       data={carouselItems}
-      sliderWidth={300}
+      sliderWidth={400}
       itemWidth={300}
       renderItem={renderItem}
       onSnapToItem={(index) => setActiveIndex(index)}
@@ -28,40 +34,65 @@ export default function Slider() {
 
 const carouselItems = [
   {
-    title: "Item 1",
-    text: "Text 1",
-    image: require("../../assets/images/maizeImg.png"),
-  },
-  {
-    title: "Item 2",
-    text: "Text 2",
-    image: require("../../assets/images/beetrootImg.png"),
-  },
-  {
-    title: "Item 3",
-    text: "Text 3",
+    title: "Tomato",
+    text: "Vegetables",
     image: require("../../assets/images/tomatoImg.png"),
   },
   {
-    title: "Item 4",
-    text: "Text 4",
+    title: "Beetroot",
+    text: "Vegetables",
+    image: require("../../assets/images/beetrootImg.png"),
+  },
+  {
+    title: "Cucumber",
+    text: "Vegetables",
+    image: require("../../assets/images/cucumberImg.png"),
+  },
+  {
+    title: "Onion",
+    text: "Vegetables",
     image: require("../../assets/images/onionImg.png"),
   },
   {
-    title: "Item 5",
-    text: "Text 5",
+    title: "Cabbage",
+    text: "Vegetables",
     image: require("../../assets/images/cabbageImg.png"),
   },
 ];
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "floralwhite",
-    borderRadius: 5,
-    height: 120,
-    width: 300,
-    alignContent: "center",
-    justifyContent: "center",
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    //height: 150,
+    width: "100%",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    padding: 20,
+    borderBottomColor: "#277d46",
+    borderBottomWidth: 4,
   },
-  imageSection: { flex: 1, width: 100, height: 100 },
+  sliderImgContainer: {
+    flex: 2,
+    // backgroundColor: "#ff0",
+  },
+  imageSection: {
+    width: 90,
+    height: 90,
+    resizeMode: 'stretch',
+  },
+  sliderTxtContainer: {
+    flex: 3,
+    // backgroundColor: "#099",
+  },
+  sliderTxtHeader: {
+    color: "#215273",
+    fontSize: 26,
+    fontWeight: "700",
+  },
+  sliderTxtCntnt: {
+    color: "#6a7373",
+    fontSize: 14,
+    fontWeight: "600",
+  },
 });
