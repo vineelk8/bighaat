@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, ActivityIndicator } from "react-native";
 
 import Weather from "./Weather";
 import { API_KEY } from "../utils/WeatherAPIKey";
@@ -44,7 +44,7 @@ export default function WeatherWidget() {
   return (
     <View style={styles.container}>
       {isLoading ? (
-        <Text>Fetching The Weather</Text>
+        <ActivityIndicator size="large" color="blue" />
       ) : (
         <Weather weather={weatherCondition} temperature={temperature} />
       )}
@@ -55,6 +55,6 @@ export default function WeatherWidget() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    justifyContent: "center",
   },
 });

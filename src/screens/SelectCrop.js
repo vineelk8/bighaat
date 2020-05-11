@@ -3,20 +3,21 @@ import { StyleSheet, View, Text, FlatList } from "react-native";
 import { Button } from "@ui-kitten/components";
 
 import Card from "../components/Card";
+import { crops } from "../utils/SelectCrop";
 
 const SelectCrop = (props) => {
-  const [crops, setCrops] = useState([]);
+  // const [crops, setCrops] = useState([]);
 
-  useEffect(() => {
-    fetch("https://bighaat-599b8.firebaseio.com/crops.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setCrops(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://bighaat-599b8.firebaseio.com/crops.json")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setCrops(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }, []);
 
   const renderGridItem = (itemData) => {
     return (

@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { Button } from "@ui-kitten/components";
+import { farmerTypes } from "../utils/FarmerTypeData";
 
 const FarmerType = (props) => {
-  const [farmerTypes, setfarmerTypes] = useState([]);
+  // const [farmerTypes, setfarmerTypes] = useState([]);
 
-  useEffect(() => {
-    fetch("https://bighaat-599b8.firebaseio.com/farmerType.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setfarmerTypes(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://bighaat-599b8.firebaseio.com/farmerType.json")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setfarmerTypes(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }, []);
 
   return (
     <View>
@@ -33,7 +34,7 @@ const FarmerType = (props) => {
                   <View style={styles.ftImgContainer}>
                     <Image
                       style={styles.farmerTypeImg}
-                      source={require("../../assets/images/fieldFarmerImg.png")}
+                      source={farmerType.imagePath}
                     />
                   </View>
                   <View style={styles.ftTxtContainer}>

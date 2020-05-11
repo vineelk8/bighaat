@@ -17,7 +17,7 @@ const HealthCheck = (props) => {
       <View style={styles.gridItem}>
         <CopilotStep
           text="Click to know more about Pest & Diseases!"
-          order={1}
+          order={2}
           name="Pest & Diseases"
         >
           <WalkthroughableView style={styles.pestDiseasesContainer}>
@@ -29,13 +29,15 @@ const HealthCheck = (props) => {
             </View>
             <View style={styles.pdTxtContainer}>
               <Text style={styles.pdTxtHeader}>Pest & Diseases</Text>
-              <Text style={styles.pdTxtCntnt}>Know about pest & deseases related to Beetroot</Text>
+              <Text style={styles.pdTxtCntnt}>
+                Know about pest & deseases related to Beetroot
+              </Text>
             </View>
           </WalkthroughableView>
         </CopilotStep>
         <CopilotStep
           text="Click here to know about Weather conditions"
-          order={2}
+          order={3}
           name="Weather"
         >
           <WalkthroughableView style={styles.weatherContainer}>
@@ -44,7 +46,7 @@ const HealthCheck = (props) => {
         </CopilotStep>
         <CopilotStep
           text="Click here for Fertilizer Calculator"
-          order={3}
+          order={4}
           name="Fertilizer"
         >
           <WalkthroughableView style={styles.fertilizorCalcContainer}>
@@ -56,7 +58,9 @@ const HealthCheck = (props) => {
             </View>
             <View style={styles.pdTxtContainer}>
               <Text style={styles.pdTxtHeader}>Fertilizer Calculator</Text>
-              <Text style={styles.pdTxtCntnt}>Calculate the amount of Fertilizer required</Text>
+              <Text style={styles.pdTxtCntnt}>
+                Calculate the amount of Fertilizer required
+              </Text>
             </View>
           </WalkthroughableView>
         </CopilotStep>
@@ -66,7 +70,7 @@ const HealthCheck = (props) => {
           Screen Walkthrough
         </Button>
       </View>
-    </View >
+    </View>
   );
 };
 const styles = StyleSheet.create({
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
   pdImg: {
     width: 70,
     height: 70,
-    resizeMode: 'stretch',
+    resizeMode: "stretch",
   },
   pdTxtContainer: {
     flex: 3,
@@ -150,6 +154,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
   },
-
 });
 export default copilot()(HealthCheck);

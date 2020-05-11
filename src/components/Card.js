@@ -5,10 +5,7 @@ export default function Card(props) {
   return (
     <View style={styles.gridItem}>
       <View style={styles.container}>
-        <ImageBackground
-          source={require("../../assets/images/brinjalImg.png")}
-          style={styles.image}
-        >
+        <ImageBackground source={props.imagePath} style={styles.image}>
           <View style={styles.titleContainer}>
             <Text style={styles.title} numberOfLines={1}>
               {props.title}
