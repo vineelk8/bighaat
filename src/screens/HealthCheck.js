@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 import WeatherWidget from "../components/WeatherWidget";
 import { Button } from "@ui-kitten/components";
 
@@ -10,7 +10,7 @@ const WalkthroughableView = walkthroughable(View);
 
 const HealthCheck = (props) => {
   return (
-    <View>
+    <ScrollView>
       <View style={styles.headContainer}>
         <Slider />
       </View>
@@ -70,7 +70,7 @@ const HealthCheck = (props) => {
           Screen Walkthrough
         </Button>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     paddingVertical: 50,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 30,
+    paddingBottom: 20,
   },
   gridItem: {
     paddingHorizontal: 20,
