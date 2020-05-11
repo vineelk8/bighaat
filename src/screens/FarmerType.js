@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   farmerTypeImg: {
     width: 100,
     height: 100,
-    resizeMode: 'stretch',
+    resizeMode: "stretch",
   },
   ftTxtContainer: {
     flex: 3,
@@ -131,7 +131,8 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
   },
   bottomSection: {
-    padding: 20,
+    paddingVertical: 0,
+    paddingHorizontal: 20,
   },
   farmerTypeName: {
     fontWeight: "700",
