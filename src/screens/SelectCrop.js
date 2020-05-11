@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
   },
   cropsList: {
-    margin: 5,
+    //margin: 5,
   },
   cropsListColumnStyle: {
     flex: 1,
