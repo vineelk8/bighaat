@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 import WeatherWidget from "../components/WeatherWidget";
 import { Button } from "@ui-kitten/components";
 
@@ -20,8 +20,17 @@ const HealthCheck = (props) => {
           order={1}
           name="Pest & Diseases"
         >
-          <WalkthroughableView style={styles.container}>
-            <Text>Pest & Diseases</Text>
+          <WalkthroughableView style={styles.pestDiseasesContainer}>
+            <View style={styles.pdImgContainer}>
+              <Image
+                style={styles.pdImg}
+                source={require("../../assets/images/pestsDiseasesIcon.png")}
+              />
+            </View>
+            <View style={styles.pdTxtContainer}>
+              <Text style={styles.pdTxtHeader}>Pest & Diseases</Text>
+              <Text style={styles.pdTxtCntnt}>Know about pest & deseases related to Beetroot</Text>
+            </View>
           </WalkthroughableView>
         </CopilotStep>
         <CopilotStep
@@ -29,7 +38,7 @@ const HealthCheck = (props) => {
           order={2}
           name="Weather"
         >
-          <WalkthroughableView style={styles.container}>
+          <WalkthroughableView style={styles.weatherContainer}>
             <WeatherWidget />
           </WalkthroughableView>
         </CopilotStep>
@@ -38,8 +47,17 @@ const HealthCheck = (props) => {
           order={3}
           name="Fertilizer"
         >
-          <WalkthroughableView style={styles.container}>
-            <Text>Fertilizer Calculator</Text>
+          <WalkthroughableView style={styles.fertilizorCalcContainer}>
+            <View style={styles.pdImgContainer}>
+              <Image
+                style={styles.pdImg}
+                source={require("../../assets/images/fertilizerCalculatorIcon.png")}
+              />
+            </View>
+            <View style={styles.pdTxtContainer}>
+              <Text style={styles.pdTxtHeader}>Fertilizer Calculator</Text>
+              <Text style={styles.pdTxtCntnt}>Calculate the amount of Fertilizer required</Text>
+            </View>
           </WalkthroughableView>
         </CopilotStep>
       </View>
@@ -48,7 +66,7 @@ const HealthCheck = (props) => {
           Screen Walkthrough
         </Button>
       </View>
-    </View>
+    </View >
   );
 };
 const styles = StyleSheet.create({
@@ -59,24 +77,15 @@ const styles = StyleSheet.create({
     paddingVertical: 50,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 50,
+    paddingBottom: 30,
   },
   gridItem: {
     padding: 20,
   },
-  container: {
-    flex: 1,
-    borderRadius: 10,
-    justifyContent: "center",
-    backgroundColor: "#dbe3e3",
-    marginBottom: 20,
-    paddingTop: 50,
-    paddingBottom: 60,
+  bottomSection: {
+    paddingTop: 0,
     paddingLeft: 20,
     paddingRight: 20,
-  },
-  bottomSection: {
-    padding: 20,
   },
   button: {
     width: "100%",
@@ -84,5 +93,62 @@ const styles = StyleSheet.create({
     backgroundColor: "#297463",
     borderWidth: 0,
   },
+  weatherContainer: {
+    //flex: 1,
+    backgroundColor: "#abc4a4",
+    borderRadius: 6,
+    marginBottom: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    height: 150,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  pestDiseasesContainer: {
+    borderRadius: 10,
+    justifyContent: "center",
+    backgroundColor: "#dbe3e3",
+    marginBottom: 20,
+    padding: 20,
+    //height: 110,
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  pdImgContainer: {
+    flex: 1,
+    //backgroundColor: "#ff0",
+  },
+  pdImg: {
+    width: 70,
+    height: 70,
+    resizeMode: 'stretch',
+  },
+  pdTxtContainer: {
+    flex: 3,
+    //backgroundColor: "#009",
+  },
+  pdTxtHeader: {
+    fontWeight: "700",
+    fontSize: 20,
+    color: "#6a7373",
+  },
+  pdTxtCntnt: {
+    fontWeight: "400",
+    fontSize: 16,
+    color: "#929a9a",
+  },
+  fertilizorCalcContainer: {
+    borderRadius: 10,
+    justifyContent: "center",
+    backgroundColor: "#dbe3e3",
+    marginBottom: 20,
+    padding: 20,
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+
 });
 export default copilot()(HealthCheck);

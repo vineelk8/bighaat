@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Button, TouchableOpacity, Image } from "react-native";
 
 const FarmerType = (props) => {
   const [farmerTypes, setfarmerTypes] = useState([]);
@@ -28,11 +28,19 @@ const FarmerType = (props) => {
           {farmerTypes.map(
             (farmerType) =>
               farmerType !== null && (
-                <View key={farmerType.name} style={styles.container}>
-                  <Text style={styles.farmerTypeName}>{farmerType.name}</Text>
-                  <Text style={styles.farmerTypeDesc}>
-                    {farmerType.description}
-                  </Text>
+                <View key={farmerType.name} style={styles.farmerTypeContainer}>
+                  <View style={styles.ftImgContainer}>
+                    <Image
+                      style={styles.farmerTypeImg}
+                      source={require("../../assets/images/fieldFarmerImg.png")}
+                    />
+                  </View>
+                  <View style={styles.ftTxtContainer}>
+                    <Text style={styles.farmerTypeName}>{farmerType.name}</Text>
+                    <Text style={styles.farmerTypeDesc}>
+                      {farmerType.description}
+                    </Text>
+                  </View>
                 </View>
               )
           )}
@@ -77,16 +85,38 @@ const styles = StyleSheet.create({
   gridItem: {
     padding: 20,
   },
-  container: {
-    flex: 1,
+  farmerTypeContainer: {
+    // flex: 1,
+    // justifyContent: "center",
     borderRadius: 6,
-    justifyContent: "center",
     backgroundColor: "#dbe3e3",
     marginBottom: 20,
-    paddingTop: 35,
-    paddingBottom: 35,
-    paddingLeft: 20,
-    paddingRight: 20,
+    padding: 20,
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  ftImgContainer: {
+    flex: 1.5,
+    //backgroundColor: "#ff0",
+  },
+  farmerTypeImg: {
+    width: 100,
+    height: 100,
+    resizeMode: 'stretch',
+  },
+  ftTxtContainer: {
+    flex: 3,
+    //backgroundColor: "#009",
+  },
+  ftTxtHeader: {
+    fontWeight: "700",
+    fontSize: 20,
+    color: "#6a7373",
+  },
+  ftTxtCntnt: {
+    fontWeight: "400",
+    fontSize: 16,
+    color: "#929a9a",
   },
   button: {
     width: "100%",

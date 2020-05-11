@@ -115,20 +115,22 @@ const App = () => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
   },
   text: {
-    fontSize: 18,
-    color: "white",
+    fontSize: 16,
+    color: "#fff",
     textAlign: "center",
     paddingVertical: 30,
   },
   title: {
-    fontSize: 25,
-    color: "white",
+    fontSize: 26,
+    color: "#fff",
+    fontWeight: "500",
     textAlign: "center",
     marginBottom: 16,
+    paddingTop: 70,
   },
   buttonCircle: {
     width: 40,
@@ -143,31 +145,24 @@ const styles = StyleSheet.create({
 const slides = [
   {
     key: "s1",
-    text: "Best Recharge offers",
-    title: "Mobile Recharge",
-    image: require("./assets/images/beetrootImg.png"),
-    backgroundColor: "#20d2bb",
+    title: "Crop Disease Ditection",
+    text: "Take a picture of your crop to detect diseases and receive treatment advice",
+    image: require("./assets/images/plantDiseaseDetectionImg.png"),
+    backgroundColor: "#a5b372",
   },
   {
     key: "s2",
-    title: "Flight Booking",
-    text: "Upto 25% off on Domestic Flights",
-    image: require("./assets/images/beetrootImg.png"),
-    backgroundColor: "#febe29",
+    title: "Community",
+    text: "Ask a question about your crop to receive help from the community",
+    image: require("./assets/images/communityImg.png"),
+    backgroundColor: "#81bcd8",
   },
   {
     key: "s3",
-    title: "Great Offers",
-    text: "Enjoy Great offers on our all services",
-    image: require("./assets/images/beetrootImg.png"),
-    backgroundColor: "#22bcb5",
-  },
-  {
-    key: "s4",
-    title: "Best Deals",
-    text: " Best Deals on all our services",
-    image: require("./assets/images/beetrootImg.png"),
-    backgroundColor: "#3395ff",
+    title: "Crop Advisory",
+    text: "Receive farming advice about how to improve your yield",
+    image: require("./assets/images/cropAdvisorImg.png"),
+    backgroundColor: "#249f9e",
   },
 ];
 
