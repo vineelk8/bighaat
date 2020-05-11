@@ -12,7 +12,7 @@
     "icon": "./assets/images/icon.png",
     "sdkVersion": "36.0.0",
     "splash": {
-      "image": "./assets/images/splash.jpg",
+      "image": "./assets/images/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },

@@ -21,9 +21,9 @@ const Community = (props) => {
           <Image
             source={{
               uri:
-                "https://miro.medium.com/max/3000/1*MI686k5sDQrISBM6L8pf5A.jpeg",
+                "https://growerssupply.files.wordpress.com/2014/06/early-blight.jpg",
             }}
-            style={{ height: 200, width: null, flex: 1 }}
+            style={{ height: 300, width: null, flex: 1 }}
           />
         </CardItem>
         <CardItem>
@@ -31,7 +31,7 @@ const Community = (props) => {
             <Thumbnail
               source={{
                 uri:
-                  "https://miro.medium.com/max/3000/1*MI686k5sDQrISBM6L8pf5A.jpeg",
+                  "https://image.freepik.com/free-photo/indian-farmer-field_75648-127.jpg",
               }}
             />
             <Body>
@@ -48,7 +48,7 @@ const Community = (props) => {
         </CardItem>
         <CardItem>
           <Body>
-            <Text>how to control in insecticide</Text>
+            <Text>Tomato disease crop destrection</Text>
             <Text note>borm fire</Text>
           </Body>
         </CardItem>
