@@ -50,8 +50,8 @@ const BigHaatNavigator = () => {
       <BigHaatStackNavigator.Screen name="Login" component={Login} />
       <BigHaatStackNavigator.Screen name="OtpInput" component={OtpInput} />
       <BigHaatStackNavigator.Screen name="Location" component={Location} />
-      <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
       <BigHaatStackNavigator.Screen name="FarmerType" component={FarmerType} />
+      <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
       <BigHaatStackNavigator.Screen
         name="HomeScreen"
         component={HomeTabNavigator}

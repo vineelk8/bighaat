@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import { Button } from "@ui-kitten/components";
 
 import Card from "../components/Card";
@@ -19,29 +19,43 @@ const SelectCrop = (props) => {
   }, []);
 
   const renderGridItem = (itemData) => {
-    console.log(itemData.item);
     return (
       <Card title={itemData.item.name} imagePath={itemData.item.imagePath} />
     );
   };
   return (
-    <View>
-      <View style={styles.mainContainer}>
-        <Text style={styles.selectCropHeading}>Select Crop</Text>
-        <Text style={styles.selectCropText}>Select Upto 8 Crop of Your intrest</Text>
-        <Text style={styles.selectedCropsCountTxt}>
-          0/8
-        </Text>
-      </View>
-      <View style={styles.bottomSection}>
-        <Button
-          style={styles.button}
-          onPress={() => props.navigation.navigate("FarmerType")}
-        >
-          Next
-        </Button>
-      </View>
-    </View>
+    <FlatList
+      style={styles.cropsList}
+      columnWrapperStyle={styles.cropsListColumnStyle}
+      keyExtractor={(item) => item.name}
+      data={crops}
+      renderItem={renderGridItem}
+      numColumns={3}
+      ListHeaderComponent={() => {
+        return (
+          <View style={styles.mainContainer}>
+            <Text style={styles.selectCropHeading}>Select Crop</Text>
+            <Text style={styles.selectCropText}>
+              Select Upto 8 Crop of Your intrest
+            </Text>
+            <Text style={styles.selectedCropsCountTxt}>0/8</Text>
+          </View>
+        );
+      }}
+      stickyHeaderIndices={[0]}
+      ListFooterComponent={() => {
+        return (
+          <View style={styles.bottomSection}>
+            <Button
+              style={styles.button}
+              onPress={() => props.navigation.navigate("HomeScreen")}
+            >
+              Next
+            </Button>
+          </View>
+        );
+      }}
+    />
   );
 };
 const styles = StyleSheet.create({
@@ -73,8 +87,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#297463",
     borderWidth: 0,
   },
-  cropsListContainer: {
-    padding: 10,
+  cropsList: {
+    margin: 5,
+  },
+  cropsListColumnStyle: {
+    flex: 1,
+    justifyContent: "space-around",
   },
   skipText: {
     color: "#6a7373",

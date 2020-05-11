@@ -42,7 +42,7 @@ const FarmerType = (props) => {
       <View style={styles.bottomSection}>
         <Button
           style={styles.button}
-          onPress={() => props.navigation.navigate("HomeScreen")}
+          onPress={() => props.navigation.navigate("SelectCrop")}
         >
           Next
         </Button>

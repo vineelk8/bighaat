@@ -1,12 +1,12 @@
 import React from "react";
 import { View, StyleSheet, ImageBackground, Text } from "react-native";
 
-export default function CategoryGridTile(props) {
+export default function Card(props) {
   return (
     <View style={styles.gridItem}>
       <View style={styles.container}>
         <ImageBackground
-          source={require("../../assets/images/tomatoImg.png")}
+          source={require("../../assets/images/brinjalImg.png")}
           style={styles.image}
         >
           <View style={styles.titleContainer}>
@@ -23,17 +23,17 @@ export default function CategoryGridTile(props) {
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 15,
-    height: 150,
-    borderRadius: 10,
+    flexDirection: "row",
+    margin: 10,
+    height: 120,
+    borderRadius: 5,
     overflow: "hidden",
     elevation: 2,
   },
   container: {
     display: "flex",
-    margin: 0,
     flex: 1,
-    flexDirection: "column",
+    flexDirection: "row",
   },
   image: {
     flex: 1,
