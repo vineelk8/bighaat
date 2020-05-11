@@ -25,7 +25,7 @@ export default function Slider() {
     <Carousel
       layout={"default"}
       data={carouselItems}
-      sliderWidth={400}
+      sliderWidth={300}
       itemWidth={300}
       renderItem={renderItem}
       onSnapToItem={(index) => setActiveIndex(index)}
