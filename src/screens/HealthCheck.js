@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   gridItem: {
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
   bottomSection: {
     paddingTop: 0,

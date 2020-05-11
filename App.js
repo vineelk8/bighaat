@@ -147,7 +147,7 @@ const slides = [
     key: "s1",
     title: "Crop Disease Ditection",
     text: "Take a picture of your crop to detect diseases and receive treatment advice",
-    image: require("./assets/images/plantDiseaseDetectionImg.png"),
+    image: require("./assets/images/cropDiseaseDetectionImg.png"),
     backgroundColor: "#a5b372",
   },
   {

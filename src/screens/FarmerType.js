@@ -84,8 +84,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   farmerTypeContainer: {
-    // flex: 1,
-    // justifyContent: "center",
     borderRadius: 6,
     backgroundColor: "#dbe3e3",
     marginBottom: 20,
@@ -126,10 +124,10 @@ const styles = StyleSheet.create({
     color: "#6a7373",
     textAlign: "center",
   },
-  farmersType: {
-    width: "100%",
-    backgroundColor: "green",
-  },
+  //farmersType: {
+  //width: "100%",
+  //backgroundColor: "green",
+  //},
   bottomSection: {
     paddingVertical: 0,
     paddingHorizontal: 20,
