@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 
 import Carousel from "react-native-snap-carousel";
+import { carouselItems } from "../utils/CarouselItems";
 
 export default function Slider() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -32,34 +33,6 @@ export default function Slider() {
   );
 }
 
-const carouselItems = [
-  {
-    title: "Tomato",
-    text: "Vegetables",
-    image: require("../../assets/images/tomatoImg.png"),
-  },
-  {
-    title: "Beetroot",
-    text: "Vegetables",
-    image: require("../../assets/images/beetrootImg.png"),
-  },
-  {
-    title: "Cucumber",
-    text: "Vegetables",
-    image: require("../../assets/images/cucumberImg.png"),
-  },
-  {
-    title: "Onion",
-    text: "Vegetables",
-    image: require("../../assets/images/onionImg.png"),
-  },
-  {
-    title: "Cabbage",
-    text: "Vegetables",
-    image: require("../../assets/images/cabbageImg.png"),
-  },
-];
-
 const styles = StyleSheet.create({
   cardContainer: {
     backgroundColor: "#fff",
@@ -79,7 +52,7 @@ const styles = StyleSheet.create({
   imageSection: {
     width: 90,
     height: 90,
-    resizeMode: 'stretch',
+    resizeMode: "stretch",
   },
   sliderTxtContainer: {
     flex: 3,
