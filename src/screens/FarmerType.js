@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { Button } from "@ui-kitten/components";
 import { farmerTypes } from "../utils/FarmerTypeData";
 
@@ -18,7 +18,7 @@ const FarmerType = (props) => {
   // }, []);
 
   return (
-    <View>
+    <ScrollView>
       <View style={styles.headContainer}>
         <Text style={styles.screen} category="h1">
           Who are you ?
@@ -58,7 +58,7 @@ const FarmerType = (props) => {
 
         <Text style={styles.skipText}>Skip</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
