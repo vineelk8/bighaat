@@ -8,8 +8,7 @@ export default function Location(props) {
       <View style={styles.topContainer}>
         <Text style={styles.Loc}>Location</Text>
         <Text style={styles.txt}>
-          To provide you with localized content, Company name needs access to
-          your device's location.
+          Allow access to Location to provide you the best relvant features on this App such as
         </Text>
       </View>
       <View style={styles.bottomContainer}>
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
   },
   locationImage: {
     width: "100%",
-    height: "64%",
+    height: "70.75%",
     marginBottom: 30,
   },
 });

@@ -34,7 +34,7 @@ const SelectCrop = (props) => {
       numColumns={3}
       ListHeaderComponent={() => {
         return (
-          <View style={styles.mainContainer}>
+          <View style={styles.topContainer}>
             <Text style={styles.selectCropHeading}>Select Crop</Text>
             <Text style={styles.selectCropText}>
               Select Upto 8 Crop of Your intrest
@@ -60,7 +60,7 @@ const SelectCrop = (props) => {
   );
 };
 const styles = StyleSheet.create({
-  mainContainer: {
+  topContainer: {
     backgroundColor: "#49a38f",
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -94,6 +94,8 @@ const styles = StyleSheet.create({
   cropsListColumnStyle: {
     flex: 1,
     justifyContent: "space-around",
+    marginHorizontal: 10,
+    marginVertical: 0,
   },
   skipText: {
     color: "#6a7373",
@@ -104,3 +106,4 @@ const styles = StyleSheet.create({
   },
 });
 export default SelectCrop;
+

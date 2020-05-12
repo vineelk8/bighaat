@@ -37,8 +37,9 @@ export default function Login(props) {
           <View style={styles.imageContainer}>
             <Image
               style={styles.image}
-              source={require("../../assets/images/loginWheatImage.jpg")}
-              resizeMode="cover"
+              //source={require("../../assets/images/loginWheatImage.jpg")}
+              source={require("../../assets/images/bigHaatLogo.png")}
+              resizeMode="contain"
             />
           </View>
           <View style={styles.loginContainer}>
@@ -77,10 +78,14 @@ const styles = StyleSheet.create({
     height: Dimensions.get("window").width * 1,
     overflow: "hidden",
     marginVertical: Dimensions.get("window").height / 31,
+    backgroundColor: "#49a38f",
+    paddingHorizontal: 50,
   },
   image: {
     width: "100%",
     height: "100%",
+    //width: 442,
+    //height: 143,
   },
   loginContainer: {
     margin: 0,
