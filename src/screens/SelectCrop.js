@@ -50,9 +50,7 @@ const SelectCrop = (props) => {
             <Button
               style={styles.button}
               onPress={() => props.navigation.navigate("HomeScreen")}
-            >
-              Next
-            </Button>
+            >Next</Button>
           </View>
         );
       }}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Image, Text, Dimensions } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-
+import ProgressBarComp from '../components/ProgressBar';
 import { carouselItems } from "../utils/CarouselItems";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -18,6 +18,9 @@ export default function Slider() {
         <View style={styles.sliderTxtContainer}>
           <Text style={styles.sliderTxtHeader}>{item.title}</Text>
           <Text style={styles.sliderTxtCntnt}>{item.text}</Text>
+          <View style={{ paddingVertical: 20 }}>
+            <ProgressBarComp />
+          </View>
         </View>
       </View>
     );

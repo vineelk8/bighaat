@@ -10,7 +10,8 @@ import Location from "../screens/Location";
 import FarmerType from "../screens/FarmerType";
 import SelectCrop from "../screens/SelectCrop";
 import Home from "../screens/Home";
-import HealthCheck from "../screens/HealthCheck";
+import PlantDoctor from "../screens/PlantDoctor";
+import Store from "../screens/Store";
 import Community from "../screens/Community";
 
 const HomeTabNav = createBottomTabNavigator();
@@ -23,10 +24,12 @@ const HomeTabNavigator = () => {
           let iconName;
           if (route.name === "Home") {
             return <FontAwesome5 name="home" size={size} color={color} />;
-          } else if (route.name === "HealthCheck") {
-            return <MaterialIcons name="camera" size={size} color={color} />;
-          } else if (route.name === "Community") {
-            return <AntDesign name="form" size={size} color={color} />;
+          } else if (route.name === "Store") {
+            return <FontAwesome5 name="shopping-cart" size={size} color={color} />;
+          } else if (route.name === "PlantDoctor") {
+            return <FontAwesome5 name="spa" size={size} color={color} />;
+          } else if (route.name === "KisanVedika") {
+            return <FontAwesome5 name="users" size={size} color={color} />;
           }
         },
       })}
@@ -36,8 +39,9 @@ const HomeTabNavigator = () => {
       }}
     >
       <HomeTabNav.Screen name="Home" component={Home} />
-      <HomeTabNav.Screen name="HealthCheck" component={HealthCheck} />
-      <HomeTabNav.Screen name="Community" component={Community} />
+      <HomeTabNav.Screen name="Store" component={Store} />
+      <HomeTabNav.Screen name="KisanVedika" component={Community} />
+      <HomeTabNav.Screen name="PlantDoctor" component={PlantDoctor} />
     </HomeTabNav.Navigator>
   );
 };
