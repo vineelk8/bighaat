@@ -25,7 +25,7 @@ const HomeTabNavigator = () => {
           if (route.name === "Home") {
             return <FontAwesome5 name="home" size={size} color={color} />;
           } else if (route.name === "Store") {
-            return <FontAwesome5 name="shopping-cart" size={size} color={color} />;
+            return <FontAwesome5 name="store" size={size} color={color} />;
           } else if (route.name === "PlantDoctor") {
             return <FontAwesome5 name="spa" size={size} color={color} />;
           } else if (route.name === "KisanVedika") {

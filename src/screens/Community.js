@@ -1,6 +1,6 @@
 import React from "react";
 import { Image } from "react-native";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import {
   Card,
   CardItem,
@@ -58,6 +58,9 @@ const Community = (props) => {
               Translate
             </Text>
           </Body>
+          <Text note uppercase={false}>
+            22 Views
+            </Text>
           <Right>
             <Text note uppercase={false}>
               1 answers
@@ -67,22 +70,28 @@ const Community = (props) => {
         <CardItem>
           <Left>
             <Button transparent>
-              <Icon name="thumbs-up" style={{ color: "grey" }} />
+              <FontAwesome5 name="thumbs-up" style={{ color: "grey" }} />
               <Text uppercase={false} style={{ color: "grey" }}>
-                Upvote
+                Like
               </Text>
             </Button>
           </Left>
           <Body>
             <Button transparent>
-              <Icon name="thumbs-down" style={{ color: "grey" }} />
+              <FontAwesome5 name="reply" style={{ color: "grey" }} />
               <Text uppercase={false} style={{ color: "grey" }}>
-                Downvote
+                Reply
               </Text>
             </Button>
           </Body>
           <Right>
-            <Ionicons name="logo-whatsapp" size={24} color="green" />
+            {/* <Ionicons name="md-share" size={24} color="grey" /> */}
+            <Button transparent>
+              <Icon name="md-share" style={{ color: "grey" }} />
+              <Text uppercase={false} style={{ color: "grey" }}>
+                Share
+              </Text>
+            </Button>
           </Right>
         </CardItem>
       </Card>
