@@ -64,7 +64,7 @@ export default function OtpInput(props) {
                 style={styles.button}
                 disabled={buttonState}
                 onPress={() => {
-                  props.navigation.navigate("Location");
+                  props.navigation.navigate("LocationAccess");
                 }}
               >
                 Sign In

@@ -6,7 +6,7 @@ import { FontAwesome5, MaterialIcons, AntDesign } from "@expo/vector-icons";
 
 import Login from "../screens/Login";
 import OtpInput from "../screens/OtpInput";
-import Location from "../screens/Location";
+import LocationAccess from "../screens/LocationAccess";
 import FarmerType from "../screens/FarmerType";
 import SelectCrop from "../screens/SelectCrop";
 import Home from "../screens/Home";
@@ -53,7 +53,7 @@ const BigHaatNavigator = () => {
     <BigHaatStackNavigator.Navigator screenOptions={{ headerShown: false }}>
       <BigHaatStackNavigator.Screen name="Login" component={Login} />
       <BigHaatStackNavigator.Screen name="OtpInput" component={OtpInput} />
-      <BigHaatStackNavigator.Screen name="Location" component={Location} />
+      <BigHaatStackNavigator.Screen name="LocationAccess" component={LocationAccess} />
       <BigHaatStackNavigator.Screen name="FarmerType" component={FarmerType} />
       <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
       <BigHaatStackNavigator.Screen

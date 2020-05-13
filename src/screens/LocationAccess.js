@@ -1,8 +1,17 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
-import { Button, Linking } from "@ui-kitten/components";
+import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
+import { Button } from "@ui-kitten/components";
+import * as Location from 'expo-location';
 
-export default function Location(props) {
+export default function LocationAccess(props) {
+
+  const giveAccessHandler = async () => {
+    let {status } = await Location.requestPermissionsAsync();
+    if (status === 'granted') {
+      props.navigation.navigate("FarmerType");
+    }
+  }
+
   return (
     <View>
       <View style={styles.topContainer}>
@@ -18,16 +27,14 @@ export default function Location(props) {
         />
         <Button
           style={styles.button}
-          onPress={() => {
-            props.navigation.navigate("FarmerType");
-          }}
+          onPress={giveAccessHandler}
         >
           Give Access
         </Button>
         <Text style={styles.skipText}>
           <Text
             onPress={() => {
-              Linking.openURL("http://www.google.com/");
+              props.navigation.navigate("FarmerType");
             }}
           >
             Skip
