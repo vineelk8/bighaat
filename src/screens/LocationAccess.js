@@ -1,34 +1,40 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  Dimensions,
+} from "react-native";
 import { Button } from "@ui-kitten/components";
-import * as Location from 'expo-location';
+import * as Location from "expo-location";
 
 export default function LocationAccess(props) {
-
   const giveAccessHandler = async () => {
-    let {status } = await Location.requestPermissionsAsync();
-    if (status === 'granted') {
+    let { status } = await Location.requestPermissionsAsync();
+    if (status === "granted") {
       props.navigation.navigate("FarmerType");
     }
-  }
+  };
 
   return (
     <View>
       <View style={styles.topContainer}>
         <Text style={styles.Loc}>Location</Text>
         <Text style={styles.txt}>
-          Allow access to Location to provide you the best relvant features on this App such as
+          Allow access to Location to provide you the best relvant features on
+          this App such as
         </Text>
       </View>
       <View style={styles.bottomContainer}>
-        <Image
-          style={styles.locationImage}
-          source={require("../../assets/images/location.png")}
-        />
-        <Button
-          style={styles.button}
-          onPress={giveAccessHandler}
-        >
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.locationImage}
+            source={require("../../assets/images/location.png")}
+          />
+        </View>
+        <Button style={styles.button} onPress={giveAccessHandler}>
           Give Access
         </Button>
         <Text style={styles.skipText}>
@@ -78,9 +84,15 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
   },
+  imageContainer: {
+    width: Dimensions.get("window").width * 1,
+    height: Dimensions.get("window").width * 1,
+    overflow: "hidden",
+    marginVertical: Dimensions.get("window").height / 31,
+    paddingHorizontal: 50,
+  },
   locationImage: {
+    height: "100%",
     width: "100%",
-    height: "70.75%",
-    marginBottom: 30,
   },
 });
