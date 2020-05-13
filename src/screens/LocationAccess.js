@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   StyleSheet,
   View,
@@ -10,7 +10,13 @@ import {
 import { Button } from "@ui-kitten/components";
 import * as Location from "expo-location";
 
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
+
 export default function LocationAccess(props) {
+  const contextData = useContext(LanguageContext);
+  let language = getLanguage(contextData);
+
   const giveAccessHandler = async () => {
     let { status } = await Location.requestPermissionsAsync();
     if (status === "granted") {
@@ -21,11 +27,8 @@ export default function LocationAccess(props) {
   return (
     <View>
       <View style={styles.topContainer}>
-        <Text style={styles.Loc}>Location</Text>
-        <Text style={styles.txt}>
-          Allow access to Location to provide you the best relvant features on
-          this App such as
-        </Text>
+        <Text style={styles.Loc}>{language.location}</Text>
+        <Text style={styles.txt}>{language.locationcontent}</Text>
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.imageContainer}>
@@ -35,7 +38,7 @@ export default function LocationAccess(props) {
           />
         </View>
         <Button style={styles.button} onPress={giveAccessHandler}>
-          Give Access
+          {language.giveaccess}
         </Button>
         <Text style={styles.skipText}>
           <Text
@@ -43,7 +46,7 @@ export default function LocationAccess(props) {
               props.navigation.navigate("FarmerType");
             }}
           >
-            Skip
+            {language.skip}
           </Text>
         </Text>
       </View>

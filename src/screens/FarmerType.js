@@ -1,10 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
+import React, { useState, useEffect, useContext } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from "react-native";
 import { Button } from "@ui-kitten/components";
+
 import { farmerTypes } from "../utils/FarmerTypeData";
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
 
 const FarmerType = (props) => {
   // const [farmerTypes, setfarmerTypes] = useState([]);
+
+  const contextData = useContext(LanguageContext);
+  let language = getLanguage(contextData);
 
   // useEffect(() => {
   //   fetch("https://bighaat-599b8.firebaseio.com/farmerType.json")
@@ -21,9 +34,9 @@ const FarmerType = (props) => {
     <ScrollView>
       <View style={styles.headContainer}>
         <Text style={styles.screen} category="h1">
-          Who are you ?
+          {language.whoru}
         </Text>
-        <Text style={styles.headText}>Choose What Describes you the best</Text>
+        <Text style={styles.headText}>{language.typedescription}</Text>
       </View>
       <View>
         <TouchableOpacity style={styles.gridItem}>
@@ -53,10 +66,9 @@ const FarmerType = (props) => {
           style={styles.button}
           onPress={() => props.navigation.navigate("SelectCrop")}
         >
-          Next
+          {language.next}
         </Button>
-
-        <Text style={styles.skipText}>Skip</Text>
+        <Text style={styles.skipText}>{language.skip}</Text>
       </View>
     </ScrollView>
   );

@@ -6,6 +6,8 @@ import BigHaatNavigator from "./src/navigation/MainNavigation";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import AppIntro from "./src/components/AppIntro";
+import LanguageSelection from "./src/screens/LanguageSelection";
+import { LanguageContext } from "./src/context/languageContext";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -14,8 +16,10 @@ const fetchFonts = () => {
 };
 
 const App = () => {
-  const [showRealApp, setShowRealApp] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [isLanguageSelected, setIsLanguageSelected] = useState(false);
+  const [showRealApp, setShowRealApp] = useState(false);
+  const [languageSelected, setLanguageSelected] = useState("");
 
   if (!dataLoaded) {
     return (
@@ -30,13 +34,22 @@ const App = () => {
 
     if (showRealApp) {
       content = <BigHaatNavigator />;
+    } else if (!showRealApp && !isLanguageSelected) {
+      content = (
+        <LanguageSelection
+          isLangSelected={setIsLanguageSelected}
+          langSelected={setLanguageSelected}
+        />
+      );
     } else {
       content = <AppIntro showAppFun={setShowRealApp} />;
     }
     return (
-      <ApplicationProvider {...eva} theme={eva.light}>
-        <NavigationContainer>{content}</NavigationContainer>
-      </ApplicationProvider>
+      <LanguageContext.Provider value={languageSelected}>
+        <ApplicationProvider {...eva} theme={eva.light}>
+          <NavigationContainer>{content}</NavigationContainer>
+        </ApplicationProvider>
+      </LanguageContext.Provider>
     );
   }
 };

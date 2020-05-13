@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import { Button } from "@ui-kitten/components";
 
 import Card from "../components/Card";
 import { crops } from "../utils/SelectCrop";
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
 
 const SelectCrop = (props) => {
   // const [crops, setCrops] = useState([]);
+
+  const contextData = useContext(LanguageContext);
+  let language = getLanguage(contextData);
 
   // useEffect(() => {
   //   fetch("https://bighaat-599b8.firebaseio.com/crops.json")
@@ -35,9 +40,9 @@ const SelectCrop = (props) => {
       ListHeaderComponent={() => {
         return (
           <View style={styles.topContainer}>
-            <Text style={styles.selectCropHeading}>Select Crop</Text>
+            <Text style={styles.selectCropHeading}>{language.selectcrop}</Text>
             <Text style={styles.selectCropText}>
-              Select Upto 8 Crop of Your intrest
+              {language.cropdescription}
             </Text>
             <Text style={styles.selectedCropsCountTxt}>0/8</Text>
           </View>
@@ -50,7 +55,9 @@ const SelectCrop = (props) => {
             <Button
               style={styles.button}
               onPress={() => props.navigation.navigate("HomeScreen")}
-            >Next</Button>
+            >
+              {language.next}
+            </Button>
           </View>
         );
       }}
@@ -104,4 +111,3 @@ const styles = StyleSheet.create({
   },
 });
 export default SelectCrop;
-

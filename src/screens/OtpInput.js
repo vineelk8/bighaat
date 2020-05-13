@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   StyleSheet,
   View,
@@ -13,9 +13,15 @@ import {
 import { Input, Button } from "@ui-kitten/components";
 import { FontAwesome } from "@expo/vector-icons";
 
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
+
 export default function OtpInput(props) {
   const [mobileNo, setMobileNo] = useState();
   const [buttonState, setButtonState] = useState(false);
+
+  const contextData = useContext(LanguageContext);
+  let language = getLanguage(contextData);
 
   const mobileNumberChangeHandler = (value) => {
     setMobileNo(value);
@@ -38,20 +44,20 @@ export default function OtpInput(props) {
             <View style={styles.imageContainer}>
               <Image
                 style={styles.image}
-                //source={require("../../assets/images/loginWheatImage.jpg")}
                 source={require("../../assets/images/bigHaatLogo.png")}
                 resizeMode="contain"
               />
             </View>
             <View style={styles.loginContainer}>
-              <Text style={styles.loginText}>Login</Text>
-              <Text style={styles.loginOTP}>Please Enter Your OTP</Text>
+              <Text style={styles.loginText}>{language.login}</Text>
+              <Text style={styles.loginOTP}>{language.enterotp}</Text>
               <Text style={styles.mobileText}>
-                <FontAwesome name="phone" size={18} /> Mobile Number
+                <FontAwesome name="phone" size={18} />
+                {language.mobile}
               </Text>
               <Input
                 style={styles.inputText}
-                placeholder="Enter Your Mobile Number"
+                placeholder={language.entermobilenumber}
                 value={mobileNo}
                 onChangeText={mobileNumberChangeHandler}
               />
@@ -68,7 +74,7 @@ export default function OtpInput(props) {
                   props.navigation.navigate("LocationAccess");
                 }}
               >
-                Sign In
+                {language.signin}
               </Button>
             </View>
           </View>
