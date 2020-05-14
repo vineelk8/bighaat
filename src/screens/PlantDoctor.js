@@ -1,45 +1,47 @@
 import React from "react";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
-
+import Fab from '../components/Fab';
 const PlantDoctor = (props) => {
   return (
-    <ScrollView>
-      <View style={styles.headContainer}>
-        <Text style={styles.headHeader}>
-          Instructions
+    <View>
+      <ScrollView>
+        <View style={styles.headContainer}>
+          <Text style={styles.headHeader}>
+            Instructions
         </Text>
-        <Text style={styles.headText}>Choose What Describes you the best</Text>
-      </View>
-      <View style={styles.bodySection}>
-        <Text style={styles.bodySecHeader}>3 Steps</Text>
-        <Text style={styles.paraTxt}>Check the health of your crop and ensure it is fine. Perform the following steps</Text>
-      </View>
-      <View style={styles.sections}>
-        <Image
-          style={styles.stepsImage}
-          source={require("../../assets/images/step1Img.jpg")}
-          resizeMode="cover"
-        />
-        <Text style={styles.secParaTxt}>Go close to the plant and take a clear picture of the affected area. If healthy, take a clear photo in good light.</Text>
-      </View>
-      <View style={styles.sections}>
-        <Image
-          style={styles.stepsImage}
-          source={require("../../assets/images/step2Img.jpg")}
-          resizeMode="cover"
-        />
-        <Text style={styles.secParaTxt}>Upload the image to the site. You will see a list of possible diseases and symptoms.</Text>
-      </View>
-      <View style={styles.sections}>
-        <Image
-          style={styles.stepsImage}
-          source={require("../../assets/images/step3Img.jpg")}
-          resizeMode="cover"
-        />
-        <Text style={styles.secParaTxt}>Check the recommended treatments from our dealers. Go to the map to find the nearest dealer.</Text>
-      </View>
-
-    </ScrollView>
+          <Text style={styles.headText}>Choose What Describes you the best</Text>
+        </View>
+        <View style={styles.bodySection}>
+          <Text style={styles.bodySecHeader}>3 Steps</Text>
+          <Text style={styles.paraTxt}>Check the health of your crop and ensure it is fine. Perform the following steps</Text>
+        </View>
+        <View style={styles.sections}>
+          <Image
+            style={styles.stepsImage}
+            source={require("../../assets/images/step1Img.jpg")}
+            resizeMode="cover"
+          />
+          <Text style={styles.secParaTxt}>Go close to the plant and take a clear picture of the affected area. If healthy, take a clear photo in good light.</Text>
+        </View>
+        <View style={styles.sections}>
+          <Image
+            style={styles.stepsImage}
+            source={require("../../assets/images/step2Img.jpg")}
+            resizeMode="cover"
+          />
+          <Text style={styles.secParaTxt}>Upload the image to the site. You will see a list of possible diseases and symptoms.</Text>
+        </View>
+        <View style={styles.sections}>
+          <Image
+            style={styles.stepsImage}
+            source={require("../../assets/images/step3Img.jpg")}
+            resizeMode="cover"
+          />
+          <Text style={styles.secParaTxt}>Check the recommended treatments from our dealers. Go to the map to find the nearest dealer.</Text>
+        </View>
+      </ScrollView>
+      <Fab />
+    </View>
   );
 };
 const styles = StyleSheet.create({

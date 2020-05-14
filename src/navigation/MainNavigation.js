@@ -1,7 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import { FontAwesome5, MaterialIcons, AntDesign } from "@expo/vector-icons";
 
 import Login from "../screens/Login";
@@ -13,6 +12,7 @@ import Home from "../screens/Home";
 import PlantDoctor from "../screens/PlantDoctor";
 import Store from "../screens/Store";
 import Community from "../screens/Community";
+import ReplyScreen, { replyScreenOptions } from "../screens/ReplyScreen";
 
 const HomeTabNav = createBottomTabNavigator();
 
@@ -56,6 +56,7 @@ const BigHaatNavigator = () => {
       <BigHaatStackNavigator.Screen name="LocationAccess" component={LocationAccess} />
       <BigHaatStackNavigator.Screen name="FarmerType" component={FarmerType} />
       <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
+      <BigHaatStackNavigator.Screen options={replyScreenOptions} name="ReplyScreen" component={ReplyScreen} />
       <BigHaatStackNavigator.Screen
         name="HomeScreen"
         component={HomeTabNavigator}

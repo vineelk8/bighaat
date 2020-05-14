@@ -8,6 +8,8 @@ import { AppLoading } from "expo";
 import AppIntro from "./src/components/AppIntro";
 import LanguageSelection from "./src/screens/LanguageSelection";
 import { LanguageContext } from "./src/context/languageContext";
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Remote debugger']);
 
 const fetchFonts = () => {
   return Font.loadAsync({
