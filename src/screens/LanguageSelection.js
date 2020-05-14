@@ -12,49 +12,102 @@ const LanguageSelection = (props) => {
   ];
   return (
     <View style={styles.Container}>
-      <Text>Namaste</Text>
-      {languages.map((item, key) => (
-        <View style={styles.elementContainer} key={key}>
-          <Text
-            onPress={() => {
-              props.isLangSelected(true);
-              props.langSelected(item.shortform);
-            }}
-            style={styles.text}
-          >
-            {item.longform}
-          </Text>
-          <View style={styles.separator} />
-        </View>
-      ))}
+      <View style={styles.headerSection}>
+        <Text style={styles.headerHeading}>Namaste</Text>
+        <Text style={styles.headerPara}>Choose your language</Text>
+      </View>
+      <View style={styles.languageContainer}>
+        {languages.map((item, key) => (
+          <View style={styles.elementContainer} key={key}>
+            <Text
+              onPress={() => {
+                props.isLangSelected(true);
+                props.langSelected(item.shortform);
+              }}
+              style={styles.languageTitle}
+            >
+              {item.longform}
+            </Text>
+          </View>
+        ))}
+      </View>
+      <View style={styles.bottomSection}>
+        <Text style={styles.privacyText}>I read and accept the terms of use and the privacy policy</Text>
+        <Button
+          style={styles.button}
+        >Accept
+        </Button>
+      </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
+    //backgroundColor: "#f00",
+    padding: 0,
+    margin: 0,
+  },
+  headerSection: {
+    flex: 1,
+    backgroundColor: "#297463",
+    justifyContent: "flex-end",
     alignItems: "center",
+    padding: 20,
+    borderBottomRightRadius: 50,
+  },
+  headerHeading: {
+    fontWeight: "700",
+    fontSize: 22,
+    color: "#fff",
+    marginBottom: 0,
+  },
+  headerPara: {
+    fontWeight: "500",
+    fontSize: 16,
+    color: "#fff",
+  },
+  languageContainer: {
+    flex: 2,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    //backgroundColor: "#009"
+    padding: 10,
+  },
+  elementContainer: {
+    backgroundColor: "#dbe3e3",
+    borderRadius: 10,
+    margin: 10,
+    height: 110,
+    flex: 1,
+    borderBottomColor: "#c0cbcb",
+    borderBottomWidth: 4,
     justifyContent: "center",
+  },
+  languageTitle: {
+    color: "#9aa4a4",
+    fontSize: 20,
+    textAlign: "center",
+  },
+  bottomSection: {
+    marginTop: 20,
+    flex: 1,
+    // flexDirection: "row",
+    // flexWrap: "wrap",
+    justifyContent: "flex-end",
+    padding: 20,
+  },
+  privacyText: {
+    color: "#6a7373",
+    textAlign: "center",
+    marginBottom: 20,
   },
   button: {
     width: "100%",
     backgroundColor: "#297463",
     borderWidth: 0,
   },
-  elementContainer: {
-    width: "100%",
-    marginTop: 30,
-    alignItems: "center",
-  },
-  text: {
-    color: "#191919",
-    fontSize: 25,
-  },
-  separator: {
-    height: 0.5,
-    width: "60%",
-    backgroundColor: "#C2C2C2",
-    marginTop: 10,
-  },
 });
 export default LanguageSelection;
+
+
