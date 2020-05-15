@@ -2,13 +2,14 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 
-const Fab = () => (
+
+const Fab = (props) => (
     <FAB
         style={styles.fab}
-        small
-        name="fixed"
-        icon="plus"
-        onPress={() => console.log('Pressed')}
+        large
+        label={props.labelName}
+        icon={props.iconName}
+        onPress={props.onSelect}
     />
 );
 

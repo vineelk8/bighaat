@@ -7,8 +7,8 @@ import AppIntro from "../components/AppIntro";
 const LanguageSelection = (props) => {
   const languages = [
     { shortform: "eng", longform: "English" },
-    { shortform: "tel", longform: "Telugu" },
-    { shortform: "hin", longform: "Hindi" },
+    { shortform: "tel", longform: "తెలుగు" },
+    { shortform: "hin", longform: "हिन्दी" },
   ];
   return (
     <View style={styles.Container}>
