@@ -31,13 +31,6 @@ const LanguageSelection = (props) => {
           </View>
         ))}
       </View>
-      <View style={styles.bottomSection}>
-        <Text style={styles.privacyText}>I read and accept the terms of use and the privacy policy</Text>
-        <Button
-          style={styles.button}
-        >Accept
-        </Button>
-      </View>
     </View>
   );
 };
@@ -109,5 +102,3 @@ const styles = StyleSheet.create({
   },
 });
 export default LanguageSelection;
-
-
