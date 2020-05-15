@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 import WeatherWidget from "../components/WeatherWidget";
 import { Button } from "@ui-kitten/components";
 import { copilot, walkthroughable, CopilotStep } from "react-native-copilot";
 import Slider from "../components/Slider";
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
 
 const WalkthroughableView = walkthroughable(View);
 
 const Home = (props) => {
+  const contextData = useContext(LanguageContext);
+  let language = getLanguage(contextData);
   return (
     <ScrollView>
       <View style={styles.headContainer}>
@@ -17,7 +21,7 @@ const Home = (props) => {
         <CopilotStep
           text="Click to know more about Pest & Diseases!"
           order={2}
-          name="Pest & Diseases"
+          name={language.pestanddiseases}
         >
           <WalkthroughableView style={styles.pestDiseasesContainer}>
             <View style={styles.pdImgContainer}>
@@ -27,9 +31,9 @@ const Home = (props) => {
               />
             </View>
             <View style={styles.pdTxtContainer}>
-              <Text style={styles.pdTxtHeader}>Pest & Diseases</Text>
+              <Text style={styles.pdTxtHeader}>{language.pestanddiseases}</Text>
               <Text style={styles.pdTxtCntnt}>
-                Know about pest & deseases related to Beetroot
+                {language.pestcontent}
               </Text>
             </View>
           </WalkthroughableView>
@@ -56,9 +60,9 @@ const Home = (props) => {
               />
             </View>
             <View style={styles.pdTxtContainer}>
-              <Text style={styles.pdTxtHeader}>Fertilizer Calculator</Text>
+              <Text style={styles.pdTxtHeader}>{language.fertilizercalc}</Text>
               <Text style={styles.pdTxtCntnt}>
-                Calculate the amount of Fertilizer required
+                {language.fertilizercontent}
               </Text>
             </View>
           </WalkthroughableView>

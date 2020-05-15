@@ -35,8 +35,8 @@ export default function LocationAccess(props) {
         </View>
         <View style={styles.container}>
           <View style={styles.listContainer}>
-            <Text style={styles.listStyle}>1. Notifications of nearby Crops Planted</Text>
-            <Text style={styles.listStyle}>2. Weather updates</Text>
+            <Text style={styles.listStyle}>1.{language.locnotification}</Text>
+            <Text style={styles.listStyle}>2.{language.weatherupdate}</Text>
           </View>
           <View style={styles.imageContainer}>
             <Image

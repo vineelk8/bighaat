@@ -71,7 +71,7 @@ const ReplyScreen = () => (
 export const replyScreenOptions = () => {
     return {
         headerShown: true,
-        headerTitle: "Ask Kisanvedika"
+        headerTitle: "Kisanvedika"
     };
 };
 const styles = StyleSheet.create({

@@ -13,7 +13,7 @@ import PlantDoctor from "../screens/PlantDoctor";
 import Store from "../screens/Store";
 import Community from "../screens/Community";
 import ReplyScreen, { replyScreenOptions } from "../screens/ReplyScreen";
-import Kisanvedika from "../screens/KisanvedikaScreen";
+import Kisanvedika, { KisanvedikaOptions } from "../screens/KisanvedikaScreen";
 const HomeTabNav = createBottomTabNavigator();
 
 const HomeTabNavigator = () => {
@@ -57,7 +57,7 @@ const BigHaatNavigator = () => {
       <BigHaatStackNavigator.Screen name="FarmerType" component={FarmerType} />
       <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
       <BigHaatStackNavigator.Screen options={replyScreenOptions} name="ReplyScreen" component={ReplyScreen} />
-      <BigHaatStackNavigator.Screen options={replyScreenOptions} name="Kisanvedika" component={Kisanvedika} />
+      <BigHaatStackNavigator.Screen options={KisanvedikaOptions} name="Kisanvedika" component={Kisanvedika} />
       <BigHaatStackNavigator.Screen
         name="HomeScreen"
         component={HomeTabNavigator}

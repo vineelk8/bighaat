@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, View, ScrollView } from "react-native";
-import FabButton from "../components/FabGroup";
+import ShareExample from "../components/Share";
 import { Ionicons, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import {
   Card,
@@ -83,7 +83,7 @@ const Community = (props) => {
                 </Button>
               </Left>
               <Body>
-                <Button transparent onPress={() => {
+                <Button style={{ marginRight: 35 }} transparent onPress={() => {
                   props.navigation.navigate("ReplyScreen");
                 }}>
                   <FontAwesome5 name="reply" style={{ color: "grey" }} />
@@ -93,16 +93,9 @@ const Community = (props) => {
                 </Button>
               </Body>
               <Right>
-                {/* <Ionicons name="md-share" size={24} color="grey" /> */}
-                {/* <Button transparent>
-                  <Icon name="md-share" style={{ color: "red" }} />
-                  <Text uppercase={false} style={{ color: "red" }}>
-                    Share
-              </Text>
-                </Button> */}
+                <ShareExample />
               </Right>
             </CardItem>
-            <FabButton />
             <View>
               <CardItem cardBody>
                 <Image
@@ -164,7 +157,7 @@ const Community = (props) => {
                   </Button>
                 </Left>
                 <Body>
-                  <Button transparent onPress={() => {
+                  <Button style={{ marginRight: 35 }} transparent onPress={() => {
                     props.navigation.navigate("ReplyScreen");
                   }}>
                     <FontAwesome5 name="reply" style={{ color: "grey" }} />
@@ -174,13 +167,7 @@ const Community = (props) => {
                   </Button>
                 </Body>
                 <Right>
-                  {/* <Ionicons name="md-share" size={24} color="grey" /> */}
-                  <Button transparent>
-                    <Icon name="md-share" style={{ color: "grey" }} />
-                    <Text uppercase={false} style={{ color: "grey" }}>
-                      Share
-              </Text>
-                  </Button>
+                  <ShareExample />
                 </Right>
               </CardItem>
             </View>

@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 import Fab from '../components/Fab';
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
+
 const PlantDoctor = (props) => {
+  const contextData = useContext(LanguageContext);
+  let language = getLanguage(contextData);
   return (
     <View>
       <ScrollView>
         <View style={styles.headContainer}>
           <Text style={styles.headHeader}>
-            Instructions
-        </Text>
-          <Text style={styles.headText}>Choose What Describes you the best</Text>
+            {language.instructions}
+          </Text>
+          <Text style={styles.headText}>{language.instructionscontent}</Text>
         </View>
         <View style={styles.bodySection}>
-          <Text style={styles.bodySecHeader}>3 Steps</Text>
-          <Text style={styles.paraTxt}>Check the health of your crop and ensure it is fine. Perform the following steps</Text>
+          <Text style={styles.bodySecHeader}>3 {language.steps}</Text>
+          <Text style={styles.paraTxt}>{language.cropcontent}</Text>
         </View>
         <View style={styles.sections}>
           <Image
@@ -21,7 +26,7 @@ const PlantDoctor = (props) => {
             source={require("../../assets/images/step1Img.jpg")}
             resizeMode="cover"
           />
-          <Text style={styles.secParaTxt}>Go close to the plant and take a clear picture of the affected area. If healthy, take a clear photo in good light.</Text>
+          <Text style={styles.secParaTxt}>{language.cameracontent}</Text>
         </View>
         <View style={styles.sections}>
           <Image
@@ -29,7 +34,7 @@ const PlantDoctor = (props) => {
             source={require("../../assets/images/step2Img.jpg")}
             resizeMode="cover"
           />
-          <Text style={styles.secParaTxt}>Upload the image to the site. You will see a list of possible diseases and symptoms.</Text>
+          <Text style={styles.secParaTxt}>{language.uploadcontent}</Text>
         </View>
         <View style={styles.sections}>
           <Image
@@ -37,7 +42,7 @@ const PlantDoctor = (props) => {
             source={require("../../assets/images/step3Img.jpg")}
             resizeMode="cover"
           />
-          <Text style={styles.secParaTxt}>Check the recommended treatments from our dealers. Go to the map to find the nearest dealer.</Text>
+          <Text style={styles.secParaTxt}>{language.recommendationContent}</Text>
         </View>
       </ScrollView>
       <Fab iconName='camera' labelName='upload Photo' onSelect={() => {

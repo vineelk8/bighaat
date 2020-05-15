@@ -1,29 +1,34 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { Text, Button } from "@ui-kitten/components";
 import { Textarea } from 'native-base';
 import { Item, HeaderButtons } from 'react-navigation-header-buttons';
 import HeaderButton from '../components/HeaderButton';
-
-const Kisanvedika = () => (
-    <ScrollView>
-        <View>
-            <View style={styles.text}>
-                <Text style={{ marginRight: 80, margin: 10, fontWeight: "bold" }} category='label'>Improve the Probability of receiving the right answer.</Text>
-                <Button style={{ marginRight: 260 }} appearance='outline'>Add Crop</Button>
+import { LanguageContext } from "../context/languageContext";
+import { getLanguage } from "../services/languageSelection";
+const Kisanvedika = () => {
+    const contextData = useContext(LanguageContext);
+    let language = getLanguage(contextData);
+    return (
+        <ScrollView>
+            <View>
+                <View style={styles.text}>
+                    <Text style={{ marginRight: 80, margin: 10, fontWeight: "bold" }} category='label'>{language.answer}</Text>
+                    <Button style={{ marginRight: 260 }} appearance='outline'>{language.addcrop}</Button>
+                </View>
+                <View style={{ paddingVertical: 10, backgroundColor: 'white' }}>
+                    <Text style={{ marginLeft: 15, margin: 5, fontWeight: "bold" }}>{language.question}</Text>
+                    <Textarea style={{ marginLeft: 5 }} placeholder={language.questionplaceholder}></Textarea>
+                </View>
+                <View style={{ margin: 10, backgroundColor: 'white' }}>
+                    <Text style={{ marginLeft: 15, margin: 5, fontWeight: "bold" }}>{language.description}</Text>
+                    <Textarea style={{ marginLeft: 5 }} placeholder={language.descriptionplaceholder}></Textarea>
+                </View>
             </View>
-            <View style={{ paddingVertical: 10, backgroundColor: 'white' }}>
-                <Text style={{ marginLeft: 15, margin: 5, fontWeight: "bold" }}>Your question to the community</Text>
-                <Textarea style={{ marginLeft: 5 }} placeholder="Add a question indicating what's wrong with your crop"></Textarea>
-            </View>
-            <View style={{ margin: 10, backgroundColor: 'white' }}>
-                <Text style={{ marginLeft: 15, margin: 5, fontWeight: "bold" }}>Description of your problem</Text>
-                <Textarea style={{ marginLeft: 5 }} placeholder="Describe specialities such as change of leaves,roots,color,bugs,tears..."></Textarea>
-            </View>
-        </View>
-    </ScrollView>
-);
-export const replyScreenOptions = () => {
+        </ScrollView>
+    )
+}
+export const KisanvedikaOptions = () => {
     return {
         headerShown: true,
         headerTitle: "Ask Kisanvedika",
