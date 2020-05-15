@@ -1,24 +1,69 @@
 import * as React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, View, Image, ScrollView } from 'react-native';
 import { Text, Button } from "@ui-kitten/components";
-import { Textarea } from 'native-base';
 import { Item, HeaderButtons } from 'react-navigation-header-buttons';
 import HeaderButton from '../components/HeaderButton';
+import {
+    Card,
+    CardItem,
+    Thumbnail,
+    Icon,
+    Left,
+    Body,
+    Right,
+    Textarea
+} from "native-base";
+import { Ionicons, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+
 
 const ReplyScreen = () => (
     <ScrollView>
         <View>
-            <View style={styles.text}>
-                <Text style={{ marginRight: 80, margin: 10, fontWeight: "bold" }} category='label'>Improve the Probability of receiving the right answer.</Text>
-                <Button style={{ marginRight: 260 }} appearance='outline'>Add Crop</Button>
-            </View>
-            <View style={{ paddingVertical: 10, backgroundColor: 'white' }}>
-                <Text style={{ marginLeft: 15, margin: 5, fontWeight: "bold" }}>Your question to the community</Text>
-                <Textarea style={{ marginLeft: 5 }} placeholder="Add a question indicating what's wrong with your crop"></Textarea>
-            </View>
+            <>
+                <Card>
+                    <CardItem cardBody>
+                        <Image
+                            source={{
+                                uri:
+                                    "https://growerssupply.files.wordpress.com/2014/06/early-blight.jpg",
+                            }}
+                            style={{ height: 300, width: null, flex: 1 }}
+                        />
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Thumbnail
+                                source={{
+                                    uri:
+                                        "https://image.freepik.com/free-photo/indian-farmer-field_75648-127.jpg",
+                                }}
+                            />
+                            <Body>
+                                <Text>
+                                    Vineel {"\u2027"} <Text note>India</Text>
+                                </Text>
+                                <Text note>
+                                    1 h <Text note>{"\u2027"}</Text>
+                                    <MaterialCommunityIcons name="food-apple" color="red" />
+                                    <Text note>Apple</Text>
+                                </Text>
+                            </Body>
+                        </Left>
+                    </CardItem>
+                    <CardItem>
+                        <Body>
+                            <Text>Tomato disease crop destrection</Text>
+                            <Text note>borm fire</Text>
+                        </Body>
+                    </CardItem>
+                </Card>
+            </>
             <View style={{ margin: 10, backgroundColor: 'white' }}>
-                <Text style={{ marginLeft: 15, margin: 5, fontWeight: "bold" }}>Description of your problem</Text>
-                <Textarea style={{ marginLeft: 5 }} placeholder="Describe specialities such as change of leaves,roots,color,bugs,tears..."></Textarea>
+                <Textarea style={{ marginLeft: 5, height: 100 }} placeholder="Add comment here"></Textarea>
+            </View>
+            <View style={{ flexDirection: 'row' }}>
+                <Button style={{ marginLeft: 75 }}>Attach</Button>
+                <Button style={{ marginLeft: 75 }}>Post</Button>
             </View>
         </View>
     </ScrollView>
@@ -26,23 +71,16 @@ const ReplyScreen = () => (
 export const replyScreenOptions = () => {
     return {
         headerShown: true,
-        headerTitle: "Ask Kisanvedika",
-        headerRight: () => <HeaderButtons HeaderButtonComponent={HeaderButton}>
-            <Item iconName='md-attach' size={24} onPress={() => {
-                console.log('pressed')
-            }} />
-            <Item title="Send" size={24} onPress={() => {
-                console.log('pressed')
-            }} />
-        </HeaderButtons>
+        headerTitle: "Ask Kisanvedika"
     };
 };
 const styles = StyleSheet.create({
     text: {
-        justifyContent: 'center',
-        alignItems: 'center',
         paddingVertical: 20
     }
 })
 
 export default ReplyScreen;
+
+
+

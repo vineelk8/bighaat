@@ -40,7 +40,9 @@ const PlantDoctor = (props) => {
           <Text style={styles.secParaTxt}>Check the recommended treatments from our dealers. Go to the map to find the nearest dealer.</Text>
         </View>
       </ScrollView>
-      <Fab />
+      <Fab iconName='camera' labelName='upload Photo' onSelect={() => {
+        props.navigation.navigate("Kisanvedika");
+      }} />
     </View>
   );
 };
