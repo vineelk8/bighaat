@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, View, ScrollView } from "react-native";
 import ShareExample from "../components/Share";
-import { Ionicons, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Card,
   CardItem,
@@ -13,7 +13,7 @@ import {
   Body,
   Right,
 } from "native-base";
-import Fab from '../components/Fab';
+import Fab from "../components/Fab";
 
 const Community = (props) => {
   return (
@@ -60,17 +60,17 @@ const Community = (props) => {
               <Body>
                 <Text note uppercase={false}>
                   Translate
-            </Text>
+                </Text>
               </Body>
               <Left>
                 <Text note uppercase={false}>
                   22 Views
-            </Text>
+                </Text>
               </Left>
               <Left>
                 <Text note uppercase={false}>
                   1 Answers
-            </Text>
+                </Text>
               </Left>
             </CardItem>
             <CardItem style={{ margin: 10 }}>
@@ -79,17 +79,21 @@ const Community = (props) => {
                   <FontAwesome5 name="thumbs-up" style={{ color: "grey" }} />
                   <Text uppercase={false} style={{ color: "grey" }}>
                     Like
-              </Text>
+                  </Text>
                 </Button>
               </Left>
               <Body>
-                <Button style={{ marginRight: 35 }} transparent onPress={() => {
-                  props.navigation.navigate("ReplyScreen");
-                }}>
+                <Button
+                  style={{ marginRight: 35 }}
+                  transparent
+                  onPress={() => {
+                    props.navigation.navigate("ReplyScreen");
+                  }}
+                >
                   <FontAwesome5 name="reply" style={{ color: "grey" }} />
                   <Text uppercase={false} style={{ color: "grey" }}>
                     Reply
-              </Text>
+                  </Text>
                 </Button>
               </Body>
               <Right>
@@ -136,15 +140,15 @@ const Community = (props) => {
                 <Body>
                   <Text note uppercase={false}>
                     Translate
-            </Text>
+                  </Text>
                 </Body>
                 <Text note uppercase={false}>
                   18 Views
-            </Text>
+                </Text>
                 <Right>
                   <Text note uppercase={false}>
                     15 answers
-            </Text>
+                  </Text>
                 </Right>
               </CardItem>
               <CardItem>
@@ -153,17 +157,21 @@ const Community = (props) => {
                     <FontAwesome5 name="thumbs-up" style={{ color: "grey" }} />
                     <Text uppercase={false} style={{ color: "grey" }}>
                       Like
-              </Text>
+                    </Text>
                   </Button>
                 </Left>
                 <Body>
-                  <Button style={{ marginRight: 35 }} transparent onPress={() => {
-                    props.navigation.navigate("ReplyScreen");
-                  }}>
+                  <Button
+                    style={{ marginRight: 35 }}
+                    transparent
+                    onPress={() => {
+                      props.navigation.navigate("ReplyScreen");
+                    }}
+                  >
                     <FontAwesome5 name="reply" style={{ color: "grey" }} />
                     <Text uppercase={false} style={{ color: "grey" }}>
                       Reply
-              </Text>
+                    </Text>
                   </Button>
                 </Body>
                 <Right>
@@ -174,9 +182,13 @@ const Community = (props) => {
           </Card>
         </>
       </ScrollView>
-      <Fab iconName='square-edit-outline' labelName='Ask Kisanvedika' onSelect={() => {
-        props.navigation.navigate("Kisanvedika");
-      }} />
+      <Fab
+        iconName="square-edit-outline"
+        labelName="Ask Kisanvedika"
+        onSelect={() => {
+          props.navigation.navigate("Kisanvedika");
+        }}
+      />
     </View>
   );
 };

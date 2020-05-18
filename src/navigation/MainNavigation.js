@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FontAwesome5, MaterialIcons, AntDesign } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 import Login from "../screens/Login";
 import OtpInput from "../screens/OtpInput";
@@ -53,11 +53,22 @@ const BigHaatNavigator = () => {
     <BigHaatStackNavigator.Navigator screenOptions={{ headerShown: false }}>
       <BigHaatStackNavigator.Screen name="Login" component={Login} />
       <BigHaatStackNavigator.Screen name="OtpInput" component={OtpInput} />
-      <BigHaatStackNavigator.Screen name="LocationAccess" component={LocationAccess} />
+      <BigHaatStackNavigator.Screen
+        name="LocationAccess"
+        component={LocationAccess}
+      />
       <BigHaatStackNavigator.Screen name="FarmerType" component={FarmerType} />
       <BigHaatStackNavigator.Screen name="SelectCrop" component={SelectCrop} />
-      <BigHaatStackNavigator.Screen options={replyScreenOptions} name="ReplyScreen" component={ReplyScreen} />
-      <BigHaatStackNavigator.Screen options={KisanvedikaOptions} name="Kisanvedika" component={Kisanvedika} />
+      <BigHaatStackNavigator.Screen
+        options={replyScreenOptions}
+        name="ReplyScreen"
+        component={ReplyScreen}
+      />
+      <BigHaatStackNavigator.Screen
+        options={KisanvedikaOptions}
+        name="Kisanvedika"
+        component={Kisanvedika}
+      />
       <BigHaatStackNavigator.Screen
         name="HomeScreen"
         component={HomeTabNavigator}

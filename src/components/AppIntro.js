@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { AntDesign, Feather } from "@expo/vector-icons";
+
 import { slides } from "./../utils/AutoSliderData";
 
 const AppIntro = (props) => {
